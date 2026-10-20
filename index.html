@@ -3,7 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jang Soo Lim &middot; UX Research</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="description" content="Mixed methods UX researcher. Three case studies: building a usability benchmarking program from zero, prioritizing nineteen features with Kano, and a mobile discovery survey across three independently recruited populations.">
+<meta name="author" content="Jang Soo Lim">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jang Soo Lim · UX Research portfolio">
+<meta property="og:description" content="Mixed methods UX researcher. Three case studies: building a usability benchmarking program from zero, prioritizing nineteen features with Kano, and a mobile discovery survey across three independently recruited populations.">
+<meta property="og:site_name" content="Jang Soo Lim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jang Soo Lim · UX Research portfolio">
+<meta name="twitter:description" content="Mixed methods UX researcher. Three case studies: building a usability benchmarking program from zero, prioritizing nineteen features with Kano, and a mobile discovery survey across three independently recruited populations.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23028090'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23fff' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+<title>Jang Soo Lim · UX Research</title>
 <style>
   :root {
     color-scheme: light;
@@ -22,7 +34,7 @@
         -webkit-font-smoothing: antialiased; line-height: 1.6; }
   .pf button { font-family: inherit; }
   .wrap { max-width: 1060px; margin: 0 auto; padding: 0 32px; }
-  .reading { max-width: 700px; }
+  .reading { max-width: 660px; }
 
   /* ---- top bar */
   .bar { border-bottom: 1px solid var(--line); background: var(--bg);
@@ -119,15 +131,77 @@
   .study-dek { font-size: 18.5px; color: var(--muted); margin: 0 0 14px; }
   .study-meta { font-size: 13px; color: var(--muted); margin: 0; letter-spacing: .02em; }
 
-  .credits { display: grid; gap: 18px; margin: 34px 0 48px; max-width: 760px;
-             background: var(--tint); border-radius: 4px; padding: 26px 30px; }
-  .credit { display: grid; grid-template-columns: 92px 1fr; gap: 18px; align-items: start; }
+  .credits { display: grid; gap: 16px; margin: 34px 0 52px; max-width: 760px;
+             background: var(--tint); border-radius: 4px; padding: 24px 30px 26px; }
+  .credit-h { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase;
+              color: var(--ink); font-weight: 700; padding-bottom: 2px;
+              border-bottom: 1px solid rgba(26,29,33,.12); }
+  .credit { display: grid; grid-template-columns: 118px 1fr; gap: 18px; align-items: start; }
   .credit-k { font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase;
               color: var(--accent); font-weight: 600; padding-top: 4px; }
   .credit-v { font-size: 15.5px; color: var(--body); }
 
+  /* ---- download links */
+  .dl { display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent);
+        text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+  .dl:hover { color: var(--ink); }
+  .credit-v .dl { font-size: 15.5px; }
+  .dls { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 20px 0 0; align-items: baseline; }
+  .dl-lg { font-size: 16px; }
+  .bar-right { display: flex; align-items: baseline; gap: 20px; }
+  .bar-dl { font-size: 13px; color: var(--muted); text-decoration: none;
+            border-bottom: 1px solid var(--line); }
+  .bar-dl:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+  /* ---- figures
+     Charts break out to the right of the reading column, which has room to
+     spare, rather than squeezing into the measure. */
+  .fig { margin: 40px 0 44px; padding: 0; width: 100%; }
+  .fig-t { font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+           color: var(--muted); margin: 0 0 14px; }
+  .fig svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .fig-c { font-size: 14.5px; line-height: 1.6; color: var(--muted); margin: 16px 0 0;
+           max-width: 660px; }
+  .f-n { font-family: var(--serif); font-size: 17px; fill: var(--accent); }
+  .f-k { font-size: 13px; font-weight: 600; fill: var(--ink); }
+  .f-l { font-size: 12.5px; fill: var(--body); }
+  .f-s { font-size: 11px; fill: var(--muted); }
+  .f-t { font-size: 10.5px; fill: var(--muted); }
+
+  /* ---- tier board */
+  .tiers { display: grid; gap: 2px; background: var(--line); border: 1px solid var(--line);
+           border-radius: 4px; overflow: hidden; }
+  .tier { display: grid; grid-template-columns: 180px 1fr; gap: 24px;
+          background: var(--panel); padding: 18px 20px; align-items: start; }
+  .tier-k b { display: block; font-family: var(--serif); font-size: 22px; color: var(--accent);
+              font-weight: 400; line-height: 1.1; }
+  .tier-k span { display: block; font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .tier-v { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tier-v .chip { white-space: normal; }
+
+  /* ---- vote bars */
+  .votes { display: grid; gap: 9px; }
+  .vote { display: grid; grid-template-columns: 1fr 120px 22px 86px; gap: 14px; align-items: center; }
+  .vote-l { font-size: 14.5px; color: var(--body); }
+  .vote-b { display: block; height: 12px; background: var(--tint); border-radius: 2px; }
+  .vote-b i { display: block; height: 12px; background: var(--accent); border-radius: 2px; }
+  .vote-n { font-family: var(--serif); font-size: 16px; color: var(--accent); text-align: right; }
+  .vote-t { font-size: 12px; color: var(--muted); font-style: italic; }
+
+  /* ---- two-population compare */
+  .cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+         background: var(--line); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .cmp-c { background: var(--panel); padding: 20px 22px 22px; }
+  .cmp-k { font-size: 15px; font-weight: 600; color: var(--ink); }
+  .cmp-s { font-size: 12.5px; color: var(--muted); margin: 2px 0 16px; }
+  .cmp-r { display: grid; grid-template-columns: 58px 1fr; gap: 12px; align-items: baseline;
+           padding: 7px 0; border-top: 1px solid var(--line); }
+  .cmp-r b { font-family: var(--serif); font-size: 20px; color: var(--accent); font-weight: 400; }
+  .cmp-r span { font-size: 13.5px; color: var(--body); line-height: 1.45; }
+
   /* ---- prose */
-  .prose { max-width: 700px; }
+  .prose { max-width: 620px; }
+  .prose .fig { width: calc(100% + 140px); max-width: 760px; }
   .prose h2 { font-family: var(--serif); font-size: 27px; line-height: 1.25; color: var(--ink);
               font-weight: 400; margin: 56px 0 16px; padding-top: 18px; border-top: 1px solid var(--line); }
   .prose h2:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
@@ -135,7 +209,22 @@
   .prose p { font-size: 17px; line-height: 1.72; margin: 0 0 20px; }
   .prose strong { color: var(--ink); font-weight: 600; }
 
-  .study-foot { margin: 60px 0 0; padding-top: 26px; border-top: 1px solid var(--line); }
+  .study-foot { margin: 60px 0 0; padding-top: 26px; border-top: 1px solid var(--line);
+                display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
+
+  /* ---- keyboard focus. Every interactive element gets a visible ring, and
+     the study heading is focused on view change so keyboard users land
+     somewhere real instead of on an element that just went display:none. */
+  .pf a:focus-visible, .pf button:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  .study-head h1:focus, .hero h1:focus { outline: none; }
+  .study-head h1:focus-visible, .hero h1:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 6px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+    .card:hover { transform: none; }
+  }
 
   /* ---- home view */
   .home { display: none; }
@@ -161,6 +250,13 @@
     .r-job { margin-bottom: 30px; }
     .bar-role { display: none; }
     .prose h2 { font-size: 23px; }
+    .credit { grid-template-columns: 1fr; }
+    .prose .fig { width: 100%; }
+    .tier { grid-template-columns: 1fr; gap: 12px; }
+    .vote { grid-template-columns: 1fr 70px 20px; row-gap: 2px; }
+    .vote-t { grid-column: 1 / -1; }
+    .cmp { grid-template-columns: 1fr; }
+    .study-foot { flex-direction: column; align-items: flex-start; gap: 16px; }
   }
 </style>
 </head>
@@ -170,7 +266,10 @@
   <div class="bar">
     <div class="bar-in">
       <button class="brand" data-nav="home">Jang Soo Lim</button>
-      <span class="bar-role">UX Research</span>
+      <span class="bar-right">
+        <span class="bar-role">UX Research</span>
+        <a class="bar-dl" href="Lim-Jang-Soo-UX-Researcher-Resume.pdf" download>Resume (PDF)</a>
+      </span>
     </div>
   </div>
 
@@ -179,7 +278,7 @@
       <div class="hero reading">
         <h1>UX research for small business software.</h1>
         <p class="lede">I am a mixed methods UX researcher. For the past five years I have worked on software that small business owners use to run the daily operation of their companies.</p>
-        <p>I work across the whole range: interviews, usability studies, prototype validation, surveys, benchmarking, feature prioritisation, and the measurement systems that let a small team keep answering the same question over several years rather than once. My strongest work is qualitative, moderating sessions and making sense of what people say and do, and I pair it with quantitative data so a finding arrives with both a number and a reason. The part I care most about is sampling. Who you ask decides what you are able to learn, and a surprising number of research questions turn out to be answerable only by talking to people the business has not been talking to.</p>
+        <p>I work across the whole range: interviews, usability studies, prototype validation, surveys, benchmarking, feature prioritization, and the measurement systems that let a small team keep answering the same question over several years rather than once. My strongest work is qualitative, moderating sessions and making sense of what people say and do, and I pair it with quantitative data so a finding arrives with both a number and a reason. The part I care most about is sampling. Who you ask decides what you are able to learn, and a surprising number of research questions turn out to be answerable only by talking to people the business has not been talking to.</p>
         <p>The three studies below are the ones I learned the most from. Each is written the way I would brief a colleague, which means the limitations are in the write-up rather than appended to it, and each ends with what I would do differently.</p>
       </div>
 
@@ -189,7 +288,7 @@
       <a class="card" href="#sus" data-nav="sus" style="--accent:#028090;--tint:#E3F0F1">
         <span class="card-num">01</span>
         <span class="card-eyebrow">Measurement systems</span>
-        <h3 class="card-title">Building a Usability Measurement System From Zero</h3>
+        <h2 class="card-title">Building a Usability Measurement System From Zero</h2>
         <p class="card-dek">Establishing SUS benchmarking as a repeatable research practice across a multi-product SMB platform</p>
         <p class="card-teaser">A small team needed to measure usability across seven product areas, and keep measuring it for years. The real design problem was not how to measure usability. It was how to measure it at a throughput one team could actually sustain.</p>
         <div class="card-stats">
@@ -201,8 +300,8 @@
 
       <a class="card" href="#kano" data-nav="kano" style="--accent:#B85042;--tint:#F7EDEA">
         <span class="card-num">02</span>
-        <span class="card-eyebrow">Prioritisation</span>
-        <h3 class="card-title">Nineteen Features, Seven People, One Buildable First Release</h3>
+        <span class="card-eyebrow">Prioritization</span>
+        <h2 class="card-title">Nineteen Features, Seven People, One Buildable First Release</h2>
         <p class="card-dek">Using a demo, a Kano survey and an interview to turn a scoping argument into an evidence-based roadmap</p>
         <p class="card-teaser">Nineteen candidate features, engineering capacity for a fraction of them, and a decision that was otherwise going to be made by whoever argued hardest in the room.</p>
         <div class="card-stats">
@@ -215,7 +314,7 @@
       <a class="card" href="#mobile" data-nav="mobile" style="--accent:#C08422;--tint:#FBF1DE">
         <span class="card-num">03</span>
         <span class="card-eyebrow">Discovery</span>
-        <h3 class="card-title">Asking the Right Population</h3>
+        <h2 class="card-title">Asking the Right Population</h2>
         <p class="card-dek">A mobile discovery survey across three independently recruited groups, one of which had never touched our products</p>
         <p class="card-teaser">Low mobile usage looked like a verdict on the category. It took a comparison group drawn from outside our products to show that it was a verdict on us.</p>
         <div class="card-stats">
@@ -228,7 +327,7 @@
 
       <div class="slab">About</div>
       <div class="resume">
-        <p class="r-summary">Mixed methods UX researcher with five years in software, most recently across Thryv and Keap, two platforms small business owners use to run their companies. My strongest work is qualitative, moderating sessions and interpreting what people say and do, and I pair it with survey and benchmarking data so a finding arrives with both a number and a reason. I work end to end, from framing the question through to the readout, and I build measurement systems that outlast any single study. I design research so the answer is allowed to come back negative, and I present the limits of my own data before anyone else has to.</p>
+        <p class="r-summary">Mixed methods UX researcher with five years in software, most recently across Thryv and Keap, two platforms small business owners use to run their companies. My strongest work is qualitative, moderating sessions and interpreting what people say and do, and I pair it with survey and benchmarking data so a finding arrives with both a number and a reason. I work end to end, from framing the question through to the readout, and I build the systems that outlast any single study, including the research operations function I stood up at Thryv: intake, taxonomy, templates and a shared knowledge base. I design research so the answer is allowed to come back negative, and I present the limits of my own data before anyone else has to.</p>
 
         <div class="r-sec"><span>Experience</span><i></i></div>
 
@@ -236,12 +335,12 @@
           <div class="r-when">January 2025 to November 2026</div>
           <div class="r-what">
             <h3 class="r-org">Thryv</h3>
-            <p class="r-role">UX Researcher III <em>&middot; Remote</em></p>
+            <p class="r-role">UX Researcher III <em>&middot; Remote, following Thryv's acquisition of Keap</em></p>
             <ul class="r-list">
-              <li>Built Thryv's usability benchmarking program from nothing and ran it for three years: 60 plus studies across 25 feature areas and all 7 product areas, every SUS score paired with task level completion, ease and confidence data so it arrived with a diagnosis attached.</li>
-              <li>Designed the study taxonomy behind the program and rebuilt the tracker as a filterable internal dashboard pairing each baseline with its re-test, which product teams checked for themselves.</li>
-              <li>Produced the first proof that redesigns worked: 9 of 10 baseline to benchmark pairs improved, several by 30 points or more, and I reported the one regression as prominently as the wins.</li>
-              <li>Led a 519 respondent mobile discovery survey across three recruited groups, including 143 ideal customer profile non-customers used as a clean comparison population. It reversed the assumption that small businesses do not use mobile, split one mobile strategy into two, and surfaced that a third of paying customers did not know the app existed.</li>
+              <li>Established the research operations function from the ground up: standardized templates, a centralized knowledge sharing platform, an intake process for research requests, a prioritized research roadmap, and a global research taxonomy.</li>
+              <li>Owned research end to end across 10 plus product areas, from scoping and study design through fieldwork, synthesis and the delivery of findings stakeholders could act on.</li>
+              <li>Partnered with design, product management, product marketing, engineering and customer service to align the research roadmap with product and business goals.</li>
+              <li>Built the usability benchmarking program from nothing and ran it for three years across Keap and Thryv: 60 plus studies across 25 feature areas and all 7 product areas, every SUS score paired with task level completion, ease and confidence data. It produced the first proof that the redesigns worked, with 9 of 10 baseline to benchmark pairs improving, and I reported the one regression as prominently as the wins.</li>
             </ul>
           </div>
         </div>
@@ -252,9 +351,9 @@
             <h3 class="r-org">Keap, a Thryv product</h3>
             <p class="r-role">UX Researcher <em>&middot; Remote</em></p>
             <ul class="r-list">
-              <li>Designed and ran a three part prototype validation study, a structured demo followed by a 19 feature Kano survey and an interview, which turned an unresolvable scoping argument into an evidence backed P0, P1 and P2 roadmap shipped behind a feature flag.</li>
-              <li>Combined the discrete and continuous Kano analyses into a weighted score rather than picking one, flagged four genuinely tied features as unresolved instead of rounding them off, and triangulated the whole result against an independent interview vote.</li>
-              <li>Owned research end to end for several product design teams on the Keap CRM, across quantitative and qualitative methods: planning, recruiting, moderating, analysis and readout.</li>
+              <li>Owned research end to end for several product design teams on the Keap CRM, from scoping and study design through recruiting, moderating, analysis and readout, across both quantitative and qualitative methods.</li>
+              <li>Chose methods against the decision in front of the team rather than defaulting to one, running moderated and unmoderated usability studies, interviews, surveys and benchmarking as the question required.</li>
+              <li>Worked with product managers and designers to turn open product questions into studies that could answer them, and delivered findings as recommendations teams could act on, including the limits of what the data would support.</li>
             </ul>
           </div>
         </div>
@@ -266,7 +365,7 @@
             <p class="r-role">UX Research Assistant <em>&middot; Seattle, WA, hybrid</em></p>
             <ul class="r-list">
               <li>Member of the AIUX team researching natural language and conversational applications of AI, embedded in a cross functional group of designers, engineers, product managers and conversation designers.</li>
-              <li>Analysed qualitative and quantitative study data, presented the key findings to the wider team, and co-authored a paper accepted at the ACM FAccT 2023 conference.</li>
+              <li>Analyzed qualitative and quantitative study data, presented the key findings to the wider team, and co-authored a paper accepted at the ACM FAccT 2023 conference.</li>
             </ul>
           </div>
         </div>
@@ -278,7 +377,7 @@
             <p class="r-role">UX Research Lead <em>&middot; Remote</em></p>
             <ul class="r-list">
               <li>Sole researcher at an early stage startup building a technology enabled lost and found service for universities.</li>
-              <li>Ran market research, competitive analysis and stakeholder interviews to locate a defensible position in the category, and planned, recruited, moderated and analysed interviews, usability studies and surveys.</li>
+              <li>Ran market research, competitive analysis and stakeholder interviews to locate a defensible position in the category, and planned, recruited, moderated and analyzed interviews, usability studies and surveys.</li>
             </ul>
           </div>
         </div>
@@ -302,7 +401,13 @@
         <div class="r-skill"><div class="r-skill-k">Tools</div><div class="r-chips"><span class="chip">Qualtrics</span><span class="chip">Alchemer</span><span class="chip">UserTesting</span><span class="chip">User Interviews</span><span class="chip">Google Analytics</span><span class="chip">Miro</span><span class="chip">Lucid</span><span class="chip">Confluence</span><span class="chip">SharePoint</span><span class="chip">Zoom</span></div></div>
         <div class="r-skill"><div class="r-skill-k">Languages</div><div class="r-chips"><span class="chip">English</span><span class="chip">Korean</span></div></div>
 
-        <p class="contact">Get in touch at <a href="mailto:limjs09@gmail.com">limjs09@gmail.com</a> or on <a href="https://linkedin.com/in/janglim">linkedin.com/in/janglim</a>. Decks and raw instruments for each study are available on request.</p>
+        <p class="contact">Get in touch at <a href="mailto:limjs09@gmail.com">limjs09@gmail.com</a> or on <a href="https://linkedin.com/in/janglim">linkedin.com/in/janglim</a>. Raw instruments and analysis files for each study are available on request.</p>
+        <p class="dls">
+          <a class="dl dl-lg" href="Lim-Jang-Soo-UX-Researcher-Resume.pdf" download>Resume (PDF)</a>
+          <a class="dl" href="SUS-Measurement-System-Case-Study.pdf" download>Measurement systems deck (PDF)</a>
+          <a class="dl" href="Kano-Feature-Prioritization-Case-Study.pdf" download>Prioritization deck (PDF)</a>
+          <a class="dl" href="Mobile-App-Discovery-Case-Study.pdf" download>Discovery deck (PDF)</a>
+        </p>
       </div>
 
       <div class="foot">Jang Soo Lim &middot; UX Research portfolio</div>
@@ -320,129 +425,229 @@
         <p class="study-meta">Thryv &middot; UX Research &middot; 2023 to 2026</p>
       </header>
       <div class="credits">
+        <div class="credit-h">In one minute</div>
+        <div class="credit"><span class="credit-k">The question</span><span class="credit-v">How usable is the product, actually, and did that redesign work? Across seven product areas, neither question had an answer anyone could defend.</span></div>
+        <div class="credit"><span class="credit-k">What I did</span><span class="credit-v">Built a SUS benchmarking program designed around throughput rather than depth for its own sake, paired every score with task-level completion, ease and confidence data, and rebuilt the tracker as a filterable internal dashboard product teams opened themselves.</span></div>
+        <div class="credit"><span class="credit-k">What changed</span><span class="credit-v">Sixty plus studies, a shared vocabulary for usability, and the first evidence that redesigns worked. Nine of ten paired re-tests improved, and the one that did not was reported as prominently as the wins.</span></div>
         <div class="credit"><span class="credit-k">My role</span><span class="credit-v">Lead researcher on the initiative, covering protocol design, study execution, system design, and stakeholder adoption.</span></div>
         <div class="credit"><span class="credit-k">Scale</span><span class="credit-v">More than sixty studies across twenty-five feature areas and all seven product areas.</span></div>
+        <div class="credit"><span class="credit-k">Deck</span><span class="credit-v"><a class="dl" href="SUS-Measurement-System-Case-Study.pdf" download>Download the presentation (PDF)</a></span></div>
       </div>
       <div class="prose">
-<h2>The problem</h2>
+<h2 id="sus-the-problem">The problem</h2>
 <p>Thryv is a software platform for small businesses, and the product surface is wide: seven major product areas covering everything from lead capture and marketing to payments, payroll, and reporting, plus products brought in through acquisition. Across that surface, there was no way to answer a question that kept coming up in planning conversations: <em>how usable is our product, actually?</em></p>
 <p>The absence had two costs. The first was that investment decisions ran on anecdote. When a team argued their feature needed a redesign, the evidence was whichever support tickets or sales complaints were most recent and most loudly told. There was no way to compare one feature's usability against another's, so there was no defensible way to rank where UX effort should go.</p>
 <p>The second cost was subtler and, I think, more expensive: without a baseline, we could not prove a redesign had worked. Teams shipped improvements and then had nothing to point at except the fact that the new thing looked better than the old thing. Research was producing findings but not evidence of its own value.</p>
-<h2>The constraint that shaped everything</h2>
+<h2 id="sus-the-constraint-that-shaped-everything">The constraint that shaped everything</h2>
 <p>Our UX research team was small relative to the number of product areas we were accountable for. Any solution that required a heavyweight study per feature was going to cover a fraction of the platform and then stall.</p>
 <p>So the real design problem was not "how do we measure usability." It was "how do we measure usability in a way that one small team can actually sustain across dozens of features, repeatedly, for years." Throughput was the requirement. Everything below follows from it.</p>
-<h2>Why SUS</h2>
+<h2 id="sus-why-sus">Why SUS</h2>
 <p>I chose the System Usability Scale as the backbone of the program. Three properties made it the right fit for the constraint:</p>
 <p><strong>It produces a number that means something outside our own walls.</strong> SUS has decades of published norms behind it, with established grade curves and adjective ratings. A score of 68 is not just a number we invented. It situates a feature against a broad external distribution. That mattered enormously for stakeholder conversations, because it meant I was not asking anyone to trust a bespoke internal index.</p>
-<p><strong>It rides along with work we were doing anyway.</strong> SUS is a ten-item questionnaire administered at the end of a session. Attaching it to a usability study costs a couple of minutes and yields a benchmark on top of everything a usability study normally produces: observed behaviour, friction points, the moments where someone goes quiet and starts hunting. One session, two payloads.</p>
-<p><strong>It is cheap enough to repeat.</strong> Because the instrument is short and standardised, re-running it on a redesigned version is nearly free. That repeatability is what converts a one-off score into a before-and-after.</p>
+<p><strong>It rides along with work we were doing anyway.</strong> SUS is a ten-item questionnaire administered at the end of a session. Attaching it to a usability study costs a couple of minutes and yields a benchmark on top of everything a usability study normally produces: observed behavior, friction points, the moments where someone goes quiet and starts hunting. One session, two payloads.</p>
+<p><strong>It is cheap enough to repeat.</strong> Because the instrument is short and standardized, re-running it on a redesigned version is nearly free. That repeatability is what converts a one-off score into a before-and-after.</p>
 <h3>What I traded away</h3>
 <p>SUS is a global perception measure. It tells you a feature feels hard; it does not tell you which part of it is hard. On its own, it would have given leadership a scoreboard and given product teams nothing actionable.</p>
 <p>So I never shipped a SUS score alone. Every study paired the benchmark with task-level diagnostics: a completion rubric scored for each task (completed unaided / completed with assistance / failed), a single-ease rating per task, and a confidence rating per task. The SUS score told you <em>that</em> a feature was underperforming and by how much; the task-level data told you <em>where</em>, and the session observations told you <em>why</em>. A score always arrived with a diagnosis attached.</p>
 <p>The other honest limitation is sample size. Studies typically ran five to eight participants, enough for the qualitative half of the work and small enough that any individual SUS score is directional rather than precise. I was explicit about this when presenting: a seven-point difference between two features is noise; a thirty-point difference is a finding.</p>
 <p>The one rule I held to was that the number was a floor, not a quota. If patterns had not clearly formed by the eighth session, meaning people were still failing in different places for different reasons, I kept recruiting. The alternative is reporting a number you do not believe, which in a benchmarking program is worse than reporting nothing, because the number outlives the caveat.</p>
-<h2>Designing for repeatability</h2>
-<p>The thing that made throughput possible was standardising the <em>measurement</em>, not the session. Studies varied in the ways they needed to: some ran moderated, some unmoderated; sessions ran thirty minutes or sixty depending on the scope of what we were testing; task sets were as long or as short as the feature demanded. Fixing those would have been false rigour, because a six-task linear flow does not need the same container as a sprawling configuration surface.</p>
+<figure class="fig">
+<div class="fig-t">What the program measured against</div>
+<svg viewBox="0 0 760 184" role="img" aria-label="The published SUS adjective scale from 0 to 100, with the platform average in the mid 70s and individual feature scores spanning the low 20s to the high 90s.">
+  <text class="f-l" x="550.0" y="22" text-anchor="middle">platform average, mid-70s</text>
+  <line x1="550.0" y1="30" x2="550.0" y2="70" stroke="var(--ink)" stroke-width="1.5"/>
+  <circle cx="550.0" cy="70" r="4" fill="var(--ink)"/>
+  <rect x="40.0" y="56" width="170.0" height="28" fill="var(--accent)" opacity="0.1"/><rect x="210.0" y="56" width="95.2" height="28" fill="var(--accent)" opacity="0.2"/><rect x="305.2" y="56" width="88.4" height="28" fill="var(--accent)" opacity="0.32"/><rect x="393.6" y="56" width="142.8" height="28" fill="var(--accent)" opacity="0.48"/><rect x="536.4" y="56" width="81.6" height="28" fill="var(--accent)" opacity="0.7"/><rect x="618.0" y="56" width="102.0" height="28" fill="var(--accent)" opacity="0.9"/><text class="f-t" x="40.0" y="98" text-anchor="middle">0</text><text class="f-t" x="210.0" y="98" text-anchor="middle">25</text><text class="f-t" x="305.2" y="98" text-anchor="middle">39</text><text class="f-t" x="393.6" y="98" text-anchor="middle">52</text><text class="f-t" x="536.4" y="98" text-anchor="middle">73</text><text class="f-t" x="618.0" y="98" text-anchor="middle">85</text><text class="f-t" x="720.0" y="98" text-anchor="middle">100</text><text class="f-s" x="125.0" y="114" text-anchor="middle">Worst imaginable</text><text class="f-s" x="257.6" y="114" text-anchor="middle">Poor</text><text class="f-s" x="349.4" y="114" text-anchor="middle">OK</text><text class="f-s" x="465.0" y="114" text-anchor="middle">Good</text><text class="f-s" x="577.2" y="114" text-anchor="middle">Excellent</text><text class="f-s" x="669.0" y="114" text-anchor="middle">Best imaginable</text>
+  <path d="M 189.6,146 L 189.6,136 L 686.0,136 L 686.0,146" fill="none" stroke="var(--muted)" stroke-width="1.2"/>
+  <text class="f-l" x="437.8" y="166" text-anchor="middle">individual feature scores ran from the low 20s to the high 90s</text>
+</svg>
+<figcaption class="fig-c">The bands are the published SUS adjective ratings, which is the whole reason the instrument was worth using: the number situates a feature against an external distribution rather than an index we invented. The average was never the interesting figure. The spread was.</figcaption>
+</figure>
+<h2 id="sus-designing-for-repeatability">Designing for repeatability</h2>
+<p>The thing that made throughput possible was standardizing the <em>measurement</em>, not the session. Studies varied in the ways they needed to: some ran moderated, some unmoderated; sessions ran thirty minutes or sixty depending on the scope of what we were testing; task sets were as long or as short as the feature demanded. Fixing those would have been false rigor, because a six-task linear flow does not need the same container as a sprawling configuration surface.</p>
 <p>What never varied was the instrumentation. The same task-completion rubric, the same post-task ease and confidence ratings, the same closing SUS instrument administered the same way, every time. That is the layer that has to be identical for scores to be comparable, and keeping it fixed meant spinning up a study on a new feature became a matter of writing tasks and choosing a format, not designing a protocol from scratch.</p>
 <p>Letting the format flex is also what let the program reach as far as it did. Unmoderated sessions covered straightforward flows cheaply and at volume; moderated sessions went where I needed to watch someone think. The benchmark came back in the same shape from both.</p>
 <p>Recruiting flexed on the same principle. The question was always who would give the clearest read on this particular product area. In most studies that meant people who fit our ideal customer profile but had never used Thryv. Testing with existing customers measures how well they have adapted to the product; testing with newcomers measures the product. Since the point of a baseline was to capture the experience the interface actually delivers, novel users were usually the right instrument. Where a workflow only made sense in the hands of someone already running their business on the platform, I recruited accordingly and said so, because a score from a different population is not comparable to one from this one.</p>
-<h2>The taxonomy</h2>
+<h2 id="sus-the-taxonomy">The taxonomy</h2>
 <p>Comparability only pays off if scores can roll up. Early on I was tagging studies loosely, and it became clear that a flat list would not survive. Some features genuinely belong to two parts of the product, and naive tagging either double-counts them in aggregate views or forces an arbitrary choice.</p>
 <p>I built a two-level taxonomy: a primary product area and a feature within it, with an optional secondary pair for features that legitimately span areas. The rule I enforced was that a study counts once regardless of how many tags it carries, so rollups stay accurate while cross-cutting features still surface in both places. Seven product areas, twenty-five feature areas.</p>
 <p>This is the part of the project I would do differently, and I'll come back to it below.</p>
-<h2>From spreadsheet to dashboard</h2>
+<h2 id="sus-from-spreadsheet-to-dashboard">From spreadsheet to dashboard</h2>
 <p>The tracker started in Excel, because that was the fastest thing that could work. It did the job for the research team and almost nothing for anyone else, because a spreadsheet is a file someone has to remember to open.</p>
 <p>So I rebuilt it as an internal HTML report: a single page covering the full platform, filterable by product area, feature, rating band, study type, and product version, with scores rendered against the adjective-rating scale and a target line so a team could see at a glance where they sat relative to where we wanted them. Crucially, it paired each baseline with its later benchmark and showed the delta between them, so improvement was visible as movement rather than as two unconnected numbers.</p>
 <p>The format change was the adoption change. Product managers and designers do not open a research spreadsheet. They do open a page where they can filter to their own area and see their number.</p>
-<h2>Results</h2>
+<h2 id="sus-results">Results</h2>
 <p>Over roughly three years the program produced more than sixty studies across twenty-five feature areas and all seven product areas. Fifty-odd established baselines; the rest re-tested redesigned or prototyped versions.</p>
 <p>The platform average landed in the mid-70s, which sits around the "Good"/"Excellent" boundary on the standard adjective scale. But the average was never the interesting number. The range was: individual features scored from the low 20s to the high 90s. That spread was the first real finding of the whole program. We did not have a usability problem; we had a usability <em>consistency</em> problem, with a handful of features dragging the experience far below what the rest of the platform delivered. No one had been able to see that before, because no one could see the features side by side.</p>
 <p>The paired re-tests are where the system proved its worth. Of ten baseline-to-benchmark pairs, nine showed improvement, several of them large: a trackable phone number feature and a listings management view each moved thirty points or more from baseline, and an automation builder that had originally scored in the "OK" band moved into "Excellent" after redesign. One pair came back slightly <em>lower</em> than its baseline, which I reported as prominently as the wins. A measurement system that only catches good news isn't a measurement system.</p>
-<p>Beyond the individual numbers, the program changed how the organisation talked about usability. Teams had a shared vocabulary and a target to aim at, the lowest-scoring features became defensible candidates for investment, and research had a standing answer to "did that redesign work."</p>
-<h2>A study in depth: Command Center baseline</h2>
+<p>Beyond the individual numbers, the program changed how the organization talked about usability. Teams had a shared vocabulary and a target to aim at, the lowest-scoring features became defensible candidates for investment, and research had a standing answer to "did that redesign work."</p>
+<figure class="fig">
+<div class="fig-t">Ten baseline-to-benchmark pairs</div>
+<svg viewBox="0 0 760 196" role="img" aria-label="Ten paired re-tests: nine improved on their baseline, one came back lower.">
+  <rect x="40" y="24" width="56" height="56" rx="4" fill="var(--tint)"/><path d="M 68,32 L 81,52 L 74,52 L 74,72 L 62,72 L 62,52 L 55,52 Z" fill="var(--accent)"/><rect x="110" y="24" width="56" height="56" rx="4" fill="var(--tint)"/><path d="M 138,32 L 151,52 L 144,52 L 144,72 L 132,72 L 132,52 L 125,52 Z" fill="var(--accent)"/><rect x="180" y="24" width="56" height="56" rx="4" fill="var(--tint)"/><path d="M 208,32 L 221,52 L 214,52 L 214,72 L 202,72 L 202,52 L 195,52 Z" fill="var(--accent)"/><rect x="250" y="24" width="56" height="56" rx="4" fill="var(--tint)"/><path d="M 278,32 L 291,52 L 284,52 L 284,72 L 272,72 L 272,52 L 265,52 Z" fill="var(--accent)"/><rect x="320" y="24" width="56" height="56" rx="4" fill="var(--tint)"/><path d="M 348,32 L 361,52 L 354,52 L 354,72 L 342,72 L 342,52 L 335,52 Z" fill="var(--accent)"/><rect x="390" y="24" width="56" height="56" rx="4" fill="var(--tint)"/><path d="M 418,32 L 431,52 L 424,52 L 424,72 L 412,72 L 412,52 L 405,52 Z" fill="var(--accent)"/><rect x="460" y="24" width="56" height="56" rx="4" fill="var(--tint)"/><path d="M 488,32 L 501,52 L 494,52 L 494,72 L 482,72 L 482,52 L 475,52 Z" fill="var(--accent)"/><rect x="530" y="24" width="56" height="56" rx="4" fill="var(--tint)"/><path d="M 558,32 L 571,52 L 564,52 L 564,72 L 552,72 L 552,52 L 545,52 Z" fill="var(--accent)"/><rect x="600" y="24" width="56" height="56" rx="4" fill="var(--tint)"/><path d="M 628,32 L 641,52 L 634,52 L 634,72 L 622,72 L 622,52 L 615,52 Z" fill="var(--accent)"/><rect x="670" y="24" width="56" height="56" rx="4" fill="#EFF1F2"/><path d="M 698,72 L 711,52 L 704,52 L 704,32 L 692,32 L 692,52 L 685,52 Z" fill="var(--muted)"/>
+  <text class="f-l" x="40" y="102">nine of ten redesigns improved on their baseline</text>
+  <text class="f-l" x="726" y="102" text-anchor="end">one came back lower</text>
+  <rect x="40" y="124" width="6" height="6" fill="var(--accent)"/><text class="f-l" x="56" y="130">Trackable phone numbers: thirty points or more above its baseline</text><rect x="40" y="145" width="6" height="6" fill="var(--accent)"/><text class="f-l" x="56" y="151">Listings management: thirty points or more above its baseline</text><rect x="40" y="166" width="6" height="6" fill="var(--accent)"/><text class="f-l" x="56" y="172">Automation builder: out of the OK band and into Excellent</text>
+</svg>
+<figcaption class="fig-c">Direction only. Individual scores at five to eight participants are directional rather than precise, so a chart of exact movements would claim more than the data supports. A measurement system that only catches good news is not a measurement system.</figcaption>
+</figure>
+<h2 id="sus-a-study-in-depth-command-center-baseline">A study in depth: Command Center baseline</h2>
 <p>One study illustrates how the benchmark and the qualitative data worked together, and why the number alone would have been useless.</p>
 <p>Command Center is Thryv's unified inbox. When I ran the baseline it scored in the high 60s, the "Good" band, which sounds fine until you see it sitting well below the platform average. The unusual thing about this study was its purpose: the feature was already slated for deprecation. So the research question was not "how do we fix this," it was "what must we not carry forward into the product that replaces it."</p>
 <p>I ran it moderated, across ten workflows, with ICP-fit participants who had never used Thryv. This was a case where watching people hunt mattered more than throughput did, and where first-contact confusion was exactly the signal the successor team needed. Task-level data pointed immediately at the weak spots: composing a new message and creating a label were by a clear margin the hardest tasks, both in completion rate and in participants' own confidence ratings.</p>
-<p>The observed behaviour explained the scores. Participants repeatedly reached for search when they wanted to filter their inbox, producing errors, because the two affordances read as interchangeable. The bulk-action control was unintuitive enough that most people needed several attempts to find it, and several asked for the selection checkboxes to simply be visible by default. The distinction between pinning a single message and pinning a whole conversation was invisible to users, who frequently did one when asked to do the other. Channel selection during compose was confused with the channel <em>filter</em>. And labels, a core organisational feature, were hard enough to locate that most participants hunted before finding where to create one.</p>
+<p>The observed behavior explained the scores. Participants repeatedly reached for search when they wanted to filter their inbox, producing errors, because the two affordances read as interchangeable. The bulk-action control was unintuitive enough that most people needed several attempts to find it, and several asked for the selection checkboxes to simply be visible by default. The distinction between pinning a single message and pinning a whole conversation was invisible to users, who frequently did one when asked to do the other. Channel selection during compose was confused with the channel <em>filter</em>. And labels, a core organizational feature, were hard enough to locate that most participants hunted before finding where to create one.</p>
 <p>None of those findings improved Command Center, which was the point. They became a constraint list for the successor product and for the other areas of the platform building similar inbox and messaging functionality, so the same problems did not get rebuilt. The study's value was entirely in what it prevented.</p>
-<h2>What I'd do differently</h2>
+<h2 id="sus-what-i-d-do-differently">What I'd do differently</h2>
 <p><strong>Build the taxonomy first.</strong> I designed the category structure after roughly a dozen studies were already done, which meant retrofitting tags onto existing work and reconciling inconsistent naming. The structure I landed on was right; the sequencing cost me real time. On a program like this the data model should precede the data.</p>
-<p><strong>Write down the rule for choosing a format.</strong> I ran studies moderated or unmoderated, long or short, based on judgement about the feature in front of me, and I think the calls were mostly right. But the reasoning lived in my head rather than in a documented rule, which meant the choice was not reproducible by anyone else and I could not test whether format was quietly shifting scores. For a system meant to outlast me, that decision should have been explicit criteria, and I should have checked for a format effect in the data.</p>
+<p><strong>Write down the rule for choosing a format.</strong> I ran studies moderated or unmoderated, long or short, based on judgment about the feature in front of me, and I think the calls were mostly right. But the reasoning lived in my head rather than in a documented rule, which meant the choice was not reproducible by anyone else and I could not test whether format was quietly shifting scores. For a system meant to outlast me, that decision should have been explicit criteria, and I should have checked for a format effect in the data.</p>
 <p><strong>Be more rigorous about uncertainty from the start.</strong> I got better at framing small-sample scores as directional, but early on I presented individual numbers with more precision than they deserved. I'd now show confidence ranges on the dashboard itself rather than relying on me being in the room to caveat it.</p>
 <p><strong>Instrument the dashboard.</strong> I know the HTML report was used more than the spreadsheet because people told me so. I never measured it. For an internal tool meant to drive adoption, I should have tracked who opened it and which views they used, then treated that as evidence the way I'd treat any other finding.</p>
       </div>
       <nav class="study-foot">
         <button class="back" data-nav="home">&#8592; All work</button>
+        <a class="dl" href="SUS-Measurement-System-Case-Study.pdf" download>Download the presentation (PDF)</a>
       </nav>
     </article>
 
     <article class="study" id="view-kano" style="--accent:#B85042;--tint:#F7EDEA">
       <button class="back" data-nav="home">&#8592; All work</button>
       <header class="study-head">
-        <span class="study-eyebrow">Prioritisation</span>
+        <span class="study-eyebrow">Prioritization</span>
         <h1>Nineteen Features, Seven People, One Buildable First Release</h1>
         <p class="study-dek">Using a demo, a Kano survey and an interview to turn a scoping argument into an evidence-based roadmap</p>
         <p class="study-meta">Keap, a Thryv product &middot; UX Research &middot; March 2024</p>
       </header>
       <div class="credits">
+        <div class="credit-h">In one minute</div>
+        <div class="credit"><span class="credit-k">The question</span><span class="credit-v">Nineteen candidate features, engineering capacity for a fraction of them, and no evidence-based way to decide what went in the first release.</span></div>
+        <div class="credit"><span class="credit-k">What I did</span><span class="credit-v">A three-part session: a structured demo so every participant saw the same capability set, a nineteen-feature Kano survey, and an interview. I ran the discrete and continuous analyses and combined them into a weighted score rather than picking one.</span></div>
+        <div class="credit"><span class="credit-k">What changed</span><span class="credit-v">A P0, P1 and P2 roadmap shipped behind a feature flag, four genuinely tied features flagged as unresolved rather than rounded off, and four gaps the prototype did not cover at all.</span></div>
         <div class="credit"><span class="credit-k">My role</span><span class="credit-v">Lead researcher. I designed the three-part session, wrote and fielded the Kano instrument, ran both analyses, built the weighted scoring that produced the priority tiers, and co-presented the roll-up.</span></div>
         <div class="credit"><span class="credit-k">Scale</span><span class="credit-v">7 participants, 6 Keap partners and 1 Keap Ultimate customer, each in a single session covering a demo, a 19-feature Kano survey, and an interview.</span></div>
+        <div class="credit"><span class="credit-k">Deck</span><span class="credit-v"><a class="dl" href="Kano-Feature-Prioritization-Case-Study.pdf" download>Download the presentation (PDF)</a></span></div>
       </div>
       <div class="prose">
-<h2>The problem</h2>
+<h2 id="kano-the-problem">The problem</h2>
 <p>Keap had two ways of managing the same work. Ultimate customers used Opportunities. Pro and Max customers used Pipelines. Two products, two mental models, one company maintaining both, and a migration path that nobody was taking because the existing pipeline had limitations that made switching feel like a downgrade.</p>
 <p>Design had already responded to that. Drawing on earlier research, the team had built a new pipeline prototype, and by the time the study was commissioned the prototype carried nineteen distinct features. The question I was asked was whether the new design actually met the needs of Keap partners and customers, and whether an Opportunities user would hit a wall if they moved across.</p>
 <p>Underneath that was a scoping question that was going to be answered one way or another. Nineteen features was not a first release. Engineering could not carry it and the timeline would not hold it. So somebody was going to decide what shipped first, and in the absence of evidence that decision would be made the way these decisions usually get made, by whoever argued most persuasively in the room. Everyone around the table was a competent advocate for their own area, which is exactly the condition under which internal debate stops converging.</p>
 <p>The failure mode I wanted to rule out was specific. An MVP missing something users consider basic does not read as incomplete, it reads as broken, and the product gets written off before the rest of the roadmap arrives. An MVP full of clever extras with a basic expectation missing is the worst version of that.</p>
-<h2>Why a demo rather than a task-based test</h2>
+<h2 id="kano-why-a-demo-rather-than-a-task-based-test">Why a demo rather than a task-based test</h2>
 <p>The obvious method for validating a prototype is a usability study. I did not run one, and the reason was the nature of the tool.</p>
 <p>Pipeline usage differs enormously from business to business. A consultancy with four long deals a quarter and an agency with two hundred short ones use the same screen in almost unrelated ways. A task-based study has to pick specific flows and ask everyone to walk them, and the moment you do that on a highly diverse tool you have decided in advance which use is the real one. You get clean data about the flows you chose and silence about everything else.</p>
 <p>So Part 1 of each session was a structured demo rather than a task set. Jake Ferguson walked each participant through the nineteen features in the new design, which gave every participant the same exposure to the same capability set without forcing them into a single way of working. That exposure was the precondition for the rest of the session, because a Kano question about a feature somebody has not seen is a question about a sentence, not a feature.</p>
 <p>The trade is real and I want to be clear about it. A demo tells you what people think of a capability described and shown to them. It does not tell you whether they can use it. I was buying breadth across nineteen features and across highly varied use, and I was paying for it in depth on any one of them.</p>
-<h2>Why Kano for the prioritisation</h2>
+<h2 id="kano-why-kano-for-the-prioritization">Why Kano for the prioritization</h2>
 <p>Part 2 was a Kano survey covering all nineteen features.</p>
-<p>Most prioritisation methods ask people to rank or rate, which produces one ordered list. That list has a known weakness, which is that people rate almost everything as important and the things they rate highest are often the things they would never notice were working. A simple importance survey would have told us nineteen features were all quite important, which is the argument we were already having.</p>
+<p>Most prioritization methods ask people to rank or rate, which produces one ordered list. That list has a known weakness, which is that people rate almost everything as important and the things they rate highest are often the things they would never notice were working. A simple importance survey would have told us nineteen features were all quite important, which is the argument we were already having.</p>
 <p>Kano asks about each feature twice, once functionally and once dysfunctionally. How would you feel if this were present, and how would you feel if it were absent. The pairing is what produces the insight, because the two answers together reveal the shape of a person's relationship with the feature rather than just its weight. Must-be features generate no satisfaction when present and real frustration when absent, which makes them the price of entry. Performance features scale, so more of them or better versions produce proportionally more satisfaction. Attractive features delight when present and are not missed when absent. Indifferent features move the user in neither direction, which makes them the cheapest thing on the list to cut.</p>
 <p>That is a categorical answer rather than an ordinal one, and categorical is what a scoping conversation needs. "Rank these nineteen" does not tell you where the line goes. "These are the price of entry, these scale with investment, these would delight, these are noise" does.</p>
-<h2>Running both analyses instead of picking one</h2>
+<h2 id="kano-running-both-analyses-instead-of-picking-one">Running both analyses instead of picking one</h2>
 <p>A Kano dataset can be read two ways, and most studies pick one. I ran both, because with seven participants the disagreement between them is itself information.</p>
 <p>The discrete analysis classifies each participant's response separately and takes the mode across participants, so a feature's category is whatever the largest group of individuals said. The continuous analysis averages the underlying satisfaction and functionality ratings first and classifies the average, so it describes the group as a composite rather than as a vote.</p>
 <p>The two told noticeably different stories. The continuous analysis put sixteen of the nineteen features in Performance and the remaining three in Attractive, with nothing at all in Must-be. The discrete analysis spread far wider: eight features landing in Must-be, four in Performance, four in Attractive, and three in Indifferent.</p>
 <p>That gap is not a contradiction, it is a property of averaging. Averaging pulls everything toward the middle of the grid, and the middle of the Kano grid is Performance. Taken alone, the continuous result would have said every feature is roughly equally worth building, which is the uninformative answer I had designed the study to avoid. Taken alone, the discrete result would have rested each category on the opinion of whichever three or four people happened to agree.</p>
 <p>So I combined them. Each analysis contributed a weight on the model's own order of importance, Must-be four, Performance three, Attractive two, Indifferent one, and a feature's weighted score was the sum of its two weights. A feature scoring seven had been called Must-be by the vote and Performance by the composite, which is as strong a signal as this dataset can produce. A feature scoring three had been called Indifferent by one reading and Attractive by the other, which is as weak a one.</p>
-<p>The scores sorted cleanly into tiers. Eight features scored seven and became P0: organising multiple pipelines, customising the display by user role, viewing basic stats per pipeline, sorting and filtering lists, seeing the contact record without leaving the deal, seeing custom fields in the deal view, viewing and editing general settings, and seeing the automations connected to each pipeline. Four scored six and became P1: toggling between board, list and analytics views, performing bulk actions, viewing analytics, and changing the board card layout. The remainder scored five or below and went to P2 or came off the list.</p>
-<h2>The ties, which I did not average away</h2>
+<p>The scores sorted cleanly into tiers. Eight features scored seven and became P0: organizing multiple pipelines, customizing the display by user role, viewing basic stats per pipeline, sorting and filtering lists, seeing the contact record without leaving the deal, seeing custom fields in the deal view, viewing and editing general settings, and seeing the automations connected to each pipeline. Four scored six and became P1: toggling between board, list and analytics views, performing bulk actions, viewing analytics, and changing the board card layout. The remainder scored five or below and went to P2 or came off the list.</p>
+<figure class="fig">
+<div class="fig-t">The same nineteen features, read two ways</div>
+<svg viewBox="0 0 760 210" role="img" aria-label="The discrete analysis put 8 features in Must-be, 4 in Performance, 4 in Attractive and 3 in Indifferent. The continuous analysis put 16 in Performance and 3 in Attractive, with none in Must-be.">
+  <rect x="176.0" y="44" width="231.6" height="46" fill="var(--accent)" opacity="1"/><text class="f-n" x="291.8" y="73" text-anchor="middle" fill="#FFFFFF">8</text><rect x="407.6" y="44" width="115.8" height="46" fill="var(--accent)" opacity="0.66"/><text class="f-n" x="465.5" y="73" text-anchor="middle" fill="#FFFFFF">4</text><rect x="523.4" y="44" width="115.8" height="46" fill="var(--accent)" opacity="0.38"/><text class="f-n" x="581.3" y="73" text-anchor="middle" fill="var(--ink)">4</text><rect x="639.2" y="44" width="86.8" height="46" fill="var(--accent)" opacity="0.16"/><text class="f-n" x="682.6" y="73" text-anchor="middle" fill="var(--ink)">3</text><text class="f-k" x="164" y="66" text-anchor="end">Discrete</text><text class="f-s" x="164" y="82" text-anchor="end">mode across participants</text><rect x="176.0" y="112" width="463.2" height="46" fill="var(--accent)" opacity="0.66"/><text class="f-n" x="407.6" y="141" text-anchor="middle" fill="#FFFFFF">16</text><rect x="639.2" y="112" width="86.8" height="46" fill="var(--accent)" opacity="0.38"/><text class="f-n" x="682.6" y="141" text-anchor="middle" fill="var(--ink)">3</text><text class="f-k" x="164" y="134" text-anchor="end">Continuous</text><text class="f-s" x="164" y="150" text-anchor="end">classified on the average</text><rect x="176" y="186" width="11" height="11" fill="var(--accent)" opacity="1"/><text class="f-s" x="193" y="195">Must-be</text><rect x="312" y="186" width="11" height="11" fill="var(--accent)" opacity="0.66"/><text class="f-s" x="329" y="195">Performance</text><rect x="448" y="186" width="11" height="11" fill="var(--accent)" opacity="0.38"/><text class="f-s" x="465" y="195">Attractive</text><rect x="584" y="186" width="11" height="11" fill="var(--accent)" opacity="0.16"/><text class="f-s" x="601" y="195">Indifferent</text>
+</svg>
+<figcaption class="fig-c">Averaging pulls everything toward the middle of the grid, and the middle of the grid is Performance. Taken alone, the continuous reading would have said every feature is roughly equally worth building, which is the uninformative answer the study existed to avoid. The gap between the two readings is why I combined them rather than picking one.</figcaption>
+</figure>
+<h2 id="kano-the-ties-which-i-did-not-average-away">The ties, which I did not average away</h2>
 <p>Four features came back with tied modes in the discrete analysis, where two categories drew the same share of participants. Toggling between views and changing the board card layout each split evenly between Performance and Attractive. Seeing the contact record without leaving the deal, and viewing and editing general settings, each split evenly between Must-be and Attractive.</p>
-<p>With seven participants a tie means three people said one thing and three said another, with the seventh somewhere else. There is no statistical way to resolve that, and any rule I invented for breaking the tie would have been my judgement dressed as arithmetic. I flagged all four as genuinely unresolved, let the continuous analysis and the weighted score carry them, and said in the readout that these specific four were the ones to watch if real usage later contradicted the plan.</p>
+<p>With seven participants a tie means three people said one thing and three said another, with the seventh somewhere else. There is no statistical way to resolve that, and any rule I invented for breaking the tie would have been my judgment dressed as arithmetic. I flagged all four as genuinely unresolved, let the continuous analysis and the weighted score carry them, and said in the readout that these specific four were the ones to watch if real usage later contradicted the plan.</p>
 <p>I mention this because tied modes are the kind of thing a small-sample Kano study produces routinely and a clean-looking deck quietly rounds off.</p>
-<h2>Triangulating against the interview</h2>
+<figure class="fig">
+<div class="fig-t">What the weighted score produced</div>
+<div class="tiers"><div class="tier">
+  <div class="tier-k"><b>P0</b><span>weighted score 7</span><span>first release</span></div>
+  <div class="tier-v"><span class="chip">Organizing multiple pipelines</span><span class="chip">Customizing the display by user role</span><span class="chip">Viewing basic stats per pipeline</span><span class="chip">Sorting and filtering lists</span><span class="chip">Seeing the contact record without leaving the deal</span><span class="chip">Seeing custom fields in the deal view</span><span class="chip">Viewing and editing general settings</span><span class="chip">Seeing the automations connected to each pipeline</span></div>
+</div><div class="tier">
+  <div class="tier-k"><b>P1</b><span>weighted score 6</span><span>follows P0</span></div>
+  <div class="tier-v"><span class="chip">Toggling between board, list and analytics views</span><span class="chip">Performing bulk actions</span><span class="chip">Viewing analytics</span><span class="chip">Changing the board card layout</span></div>
+</div><div class="tier">
+  <div class="tier-k"><b>P2</b><span>weighted score 5 or below</span><span>deferred or cut</span></div>
+  <div class="tier-v"><span class="chip">The remaining seven features</span></div>
+</div></div>
+<figcaption class="fig-c">A feature scoring seven had been called Must-be by the vote and Performance by the composite, which is as strong a signal as seven participants can produce. A feature scoring three had been called Indifferent by one reading and Attractive by the other, which is as weak a one.</figcaption>
+</figure>
+<h2 id="kano-triangulating-against-the-interview">Triangulating against the interview</h2>
 <p>Part 3 of each session was an interview, and it carried a question that worked as an independent check on the survey. After seeing the demo and completing the Kano instrument, each participant picked the three features they most wanted.</p>
-<p>Two features took four votes each: customising the display by user role, and seeing the contact record without leaving the deal. Three took three votes: toggling between views, viewing analytics, and seeing custom fields in the deal view. Three more took one or two: organising multiple pipelines, performing bulk actions, and seeing connected automations.</p>
+<p>Two features took four votes each: customizing the display by user role, and seeing the contact record without leaving the deal. Three took three votes: toggling between views, viewing analytics, and seeing custom fields in the deal view. Three more took one or two: organizing multiple pipelines, performing bulk actions, and seeing connected automations.</p>
 <p>Every feature named in that vote had already landed in P0 or P1 on the weighted score. Nothing in the top tier of the interview sat outside the top tier of the survey, and nothing a participant chose freely contradicted what the instrument had extracted from them.</p>
 <p>That agreement is the part of the study I trust most, because the two routes to it are different in kind. The Kano result comes from a structured instrument that participants cannot see the logic of while answering. The vote is an open choice made in their own words. The instrument and the conversation pointing at the same features is a far stronger claim than either on its own, and it is the evidence I led with when the roll-up met resistance.</p>
-<h2>What else the interviews surfaced</h2>
+<figure class="fig">
+<div class="fig-t">The interview vote, run against the survey result</div>
+<div class="votes"><div class="vote">
+  <span class="vote-l">Customizing the display by user role</span>
+  <span class="vote-b"><i style="width:100%"></i></span>
+  <span class="vote-n">4</span>
+  <span class="vote-t">already P0</span>
+</div><div class="vote">
+  <span class="vote-l">Seeing the contact record without leaving the deal</span>
+  <span class="vote-b"><i style="width:100%"></i></span>
+  <span class="vote-n">4</span>
+  <span class="vote-t">already P0</span>
+</div><div class="vote">
+  <span class="vote-l">Toggling between board, list and analytics views</span>
+  <span class="vote-b"><i style="width:75%"></i></span>
+  <span class="vote-n">3</span>
+  <span class="vote-t">already P1</span>
+</div><div class="vote">
+  <span class="vote-l">Viewing analytics</span>
+  <span class="vote-b"><i style="width:75%"></i></span>
+  <span class="vote-n">3</span>
+  <span class="vote-t">already P1</span>
+</div><div class="vote">
+  <span class="vote-l">Seeing custom fields in the deal view</span>
+  <span class="vote-b"><i style="width:75%"></i></span>
+  <span class="vote-n">3</span>
+  <span class="vote-t">already P0</span>
+</div><div class="vote">
+  <span class="vote-l">Organizing multiple pipelines</span>
+  <span class="vote-b"><i style="width:50%"></i></span>
+  <span class="vote-n">2</span>
+  <span class="vote-t">already P0</span>
+</div><div class="vote">
+  <span class="vote-l">Performing bulk actions</span>
+  <span class="vote-b"><i style="width:25%"></i></span>
+  <span class="vote-n">1</span>
+  <span class="vote-t">already P1</span>
+</div><div class="vote">
+  <span class="vote-l">Seeing the automations connected to each pipeline</span>
+  <span class="vote-b"><i style="width:25%"></i></span>
+  <span class="vote-n">1</span>
+  <span class="vote-t">already P0</span>
+</div></div>
+<figcaption class="fig-c">Each participant named the three features they most wanted, in their own words, after the instrument had already extracted its answer. Every feature named was already P0 or P1 on the weighted score. Two routes that are different in kind arriving at the same place is a far stronger claim than either on its own.</figcaption>
+</figure>
+<h2 id="kano-what-else-the-interviews-surfaced">What else the interviews surfaced</h2>
 <p>The qualitative half carried things the survey had no way to ask. Participants were consistent that the new pipeline was a superior model to the old one, that the features shown looked genuinely useful, and that they wanted them in the current product rather than at some point in the future. On the central question the study was commissioned to answer, they thought the new design would meet their business needs for the most part.</p>
 <p>They also named four gaps, and because these came from people picking at a prototype rather than from a questionnaire, they are the kind of finding the instrument could never have produced. They wanted to know whether it would connect to third-party platforms. Next action dates were missing. There was no clear way to record why a deal was won or lost. And they wanted to monitor which products and services clients were actually buying.</p>
-<p>None of the four were in the nineteen. A prioritisation study tells you how to order the list you brought; it does not tell you what is not on it. The interview did.</p>
-<h2>What it changed</h2>
+<p>None of the four were in the nineteen. A prioritization study tells you how to order the list you brought; it does not tell you what is not on it. The interview did.</p>
+<h2 id="kano-what-it-changed">What it changed</h2>
 <p>The product team scoped the first release on the P0 tier, to go out behind a feature flag, with P1 and P2 following once P0 was in. A selected group of clients would get the flag turned on so the team could watch real use before a wider release.</p>
 <p>The more useful change was to the conversation. Before the study the team was arguing about features. Afterwards they were arguing about the evidence, which is a more productive argument because it has a resolution procedure. A feature's position could still be challenged, but challenging it meant engaging with what partners and customers had said rather than restating a preference.</p>
 <p>It also made cutting possible. Removing scope is the hardest act in product work because every feature has an author, and "we are not building this" lands as a verdict on the person who proposed it. An external classification depersonalises that. The features that came off came off because the people the product was for did not respond to them.</p>
-<h2>Limitations I put in the deck</h2>
+<h2 id="kano-limitations-i-put-in-the-deck">Limitations I put in the deck</h2>
 <p>Seven participants is a small sample for a categorical method, and the arithmetic makes that vivid: one participant is 14.29 percent, so a feature's category was frequently decided by three people. I reported the percentages because they are what the method produces, and I said plainly in the room that they should be read as seven people rather than as a rate.</p>
 <p>Six of the seven were Keap partners rather than end customers. Partners are expert proxies, they see many businesses and they know the product deeply, and that expertise is exactly why they were recruited. It also means they are not the user. A partner's read on what a small business needs from a pipeline is informed, and it is still secondhand.</p>
 <p>Kano is a stated-preference method, and here it was applied to a prototype rather than a product. Participants were reacting to a demo, and the gap between what people say they want and what they do when it is in front of them is the oldest problem in the discipline. This tells you what users expect of a pipeline like this one. It does not tell you whether our implementation lands.</p>
 <p>Nineteen features is far more than the handful Kano guidance recommends for a single sitting, because every feature costs two near-duplicate questions. I ran nineteen anyway, deliberately, because scoping an MVP is a question about the whole set and a result about three features would have left the other sixteen to be settled by argument, which was the situation I was brought in to fix. The cost was a long instrument and a real fatigue risk that I could not design out.</p>
-<p>Kano categories also decay. What is Attractive this year becomes Performance as competitors adopt it and Must-be once users stop noticing it was ever a choice. The classification is a snapshot of a market at a moment, and I handed it over labelled that way.</p>
-<h2>What I would do differently</h2>
-<p>I would recruit end customers alongside partners, and I would analyse them separately rather than pooling them. One Keap Ultimate customer against six partners cannot support that split, so the design had no way to tell a partner's view from a customer's. Given that migrating Opportunities users was the strategic point of the whole exercise, their voice specifically was the one the sample was thinnest on.</p>
+<p>Kano categories also decay. What is Attractive this year becomes Performance as competitors adopt it and Must-be once users stop noticing it was ever a choice. The classification is a snapshot of a market at a moment, and I handed it over labeled that way.</p>
+<h2 id="kano-what-i-would-do-differently">What I would do differently</h2>
+<p>I would recruit end customers alongside partners, and I would analyze them separately rather than pooling them. One Keap Ultimate customer against six partners cannot support that split, so the design had no way to tell a partner's view from a customer's. Given that migrating Opportunities users was the strategic point of the whole exercise, their voice specifically was the one the sample was thinnest on.</p>
 <p>I would plan the tie-break before fielding rather than meeting it in the data. With a sample this size, tied modes are predictable, not surprising, and a rule agreed in advance, whether that is a larger sample, a follow-up question, or a stated convention for which way a tie resolves, is defensible in a way that a decision made after seeing the result is not.</p>
 <p>I would get engineering's effort estimates before the analysis rather than after. Knowing which features were expensive would have told me which classifications deserved the most analytical care, because the categories that matter most are the ones where a cheap feature and an expensive feature land on opposite sides of the line.</p>
 <p>I would pilot the feature descriptions with people from the target population. I wrote them as plain statements of the outcome rather than the capability and had colleagues read them for leading language, but I never tested them, and on a study where the instrument is effectively nineteen descriptions, the descriptions deserve their own round.</p>
-<p>And I would build the re-test into the handover instead of leaving it as a caveat. I said categories decay and then let it sit there. The honest version of this deliverable names the date it should be refreshed and lists the four tied features as the ones most likely to have moved. More than that, once the flagged release was live there was a real opportunity to check the predictions against behaviour, to see whether the Must-be features were invisible when working and loud when broken. I treated the study as finished at the readout. It was not finished, it was testable, and I let that go.</p>
+<p>And I would build the re-test into the handover instead of leaving it as a caveat. I said categories decay and then let it sit there. The honest version of this deliverable names the date it should be refreshed and lists the four tied features as the ones most likely to have moved. More than that, once the flagged release was live there was a real opportunity to check the predictions against behavior, to see whether the Must-be features were invisible when working and loud when broken. I treated the study as finished at the readout. It was not finished, it was testable, and I let that go.</p>
       </div>
       <nav class="study-foot">
         <button class="back" data-nav="home">&#8592; All work</button>
+        <a class="dl" href="Kano-Feature-Prioritization-Case-Study.pdf" download>Download the presentation (PDF)</a>
       </nav>
     </article>
 
@@ -455,49 +660,84 @@
         <p class="study-meta">Thryv and Keap &middot; UX Research &middot; February 2026</p>
       </header>
       <div class="credits">
-        <div class="credit"><span class="credit-k">My role</span><span class="credit-v">Sole researcher. I designed the study, wrote the instrument, defined the sampling frame, fielded it in Qualtrics, analysed the results, and wrote the roll-up that went to the mobile app team and to product leadership.</span></div>
+        <div class="credit-h">In one minute</div>
+        <div class="credit"><span class="credit-k">The question</span><span class="credit-v">Was low mobile usage a verdict on the category, or a verdict on our product? Every piece of evidence we held came from people already inside our products, so nothing could tell those two apart.</span></div>
+        <div class="credit"><span class="credit-k">What I did</span><span class="credit-v">A 519 respondent survey across three independently recruited groups, including 143 ideal customer profile non-customers who had never used either product and were recruited purely as a clean comparison population.</span></div>
+        <div class="credit"><span class="credit-k">What changed</span><span class="credit-v">The market-fit debate closed, one mobile strategy split into two, and awareness became a workstream once a third of paying customers turned out not to know the app existed.</span></div>
+        <div class="credit"><span class="credit-k">My role</span><span class="credit-v">Sole researcher. I designed the study, wrote the instrument, defined the sampling frame, fielded it in Qualtrics, analyzed the results, and wrote the roll-up that went to the mobile app team and to product leadership.</span></div>
         <div class="credit"><span class="credit-k">Scale</span><span class="credit-v">519 respondents across three independently recruited groups.</span></div>
+        <div class="credit"><span class="credit-k">Deck</span><span class="credit-v"><a class="dl" href="Mobile-App-Discovery-Case-Study.pdf" download>Download the presentation (PDF)</a></span></div>
       </div>
       <div class="prose">
-<h2>The problem</h2>
+<h2 id="mobile-the-problem">The problem</h2>
 <p>Thryv has a mobile app. Keap has a mobile app. Neither was getting much use, and both were showing their age. The mobile app team wanted to invest, and the question that arrived on my desk was framed the way these questions usually are: should we build a better mobile app, and if so, what goes in it?</p>
 <p>Underneath that framing was a quieter and more dangerous question that nobody had asked out loud. There was a working assumption in the building that small business owners simply do not run their businesses from a phone, that the low usage numbers were a verdict on the category rather than on our product. If that assumption were true, the correct decision was to stop investing. If it were false, the correct decision was to find out what was actually blocking people and fix it. The existing evidence could not tell those two situations apart, because every piece of evidence we had came from people already inside our products, looking at the app we had already built.</p>
 <p>That is the shape of the problem that decided the method.</p>
-<h2>The design decision that mattered</h2>
+<h2 id="mobile-the-design-decision-that-mattered">The design decision that mattered</h2>
 <p>I could have surveyed our customers. That would have been cheaper, faster, and would have produced a clean-looking report. It also would have been nearly worthless, because a population that is already not using your app cannot tell you whether the category has value. Every answer they give is downstream of their experience of your specific product, and you have no way to separate "I do not want this" from "I do not want yours."</p>
-<p>So I recruited three groups rather than one. Keap customers, 230 of them. Thryv customers, 146. And a third group of 143 people drawn from our ideal customer profile who had never used either product, recruited as a comparison population rather than as prospects. The non-customer group was the point of the whole design. It gave me a reading on business mobile app behaviour that was entirely uncontaminated by anything we had ever shipped. Whatever those 143 people did with their phones was what the market does, not what our product had trained people to do.</p>
+<p>So I recruited three groups rather than one. Keap customers, 230 of them. Thryv customers, 146. And a third group of 143 people drawn from our ideal customer profile who had never used either product, recruited as a comparison population rather than as prospects. The non-customer group was the point of the whole design. It gave me a reading on business mobile app behavior that was entirely uncontaminated by anything we had ever shipped. Whatever those 143 people did with their phones was what the market does, not what our product had trained people to do.</p>
 <p>The two customer groups were kept separate rather than pooled, which turned out to matter more than I expected. Keap and Thryv serve overlapping but genuinely different businesses, and I did not want an average that described neither of them.</p>
-<p>The instrument ran in Qualtrics and moved through four areas: general business mobile app behaviour outside our products, what tools and categories of software people were using, whether they perceived a need for mobile business management at all, and what an ideal CRM mobile app would contain. The non-customers answered the behavioural and ideal-state sections; questions about why someone was not using our app only went to people who could meaningfully answer them.</p>
-<h2>What came back</h2>
+<p>The instrument ran in Qualtrics and moved through four areas: general business mobile app behavior outside our products, what tools and categories of software people were using, whether they perceived a need for mobile business management at all, and what an ideal CRM mobile app would contain. The non-customers answered the behavioral and ideal-state sections; questions about why someone was not using our app only went to people who could meaningfully answer them.</p>
+<h2 id="mobile-what-came-back">What came back</h2>
 <p>The comparison group did exactly what it was recruited to do, which was to make the customer numbers legible.</p>
 <p>Among ICP non-customers, 90 percent of business owners and 81 percent of employees use mobile apps to run their business, and 76 percent of them do it daily. Among Thryv customers, mobile business app usage sat at 44 percent. Among Keap customers, 63 percent of owners and 56 percent of employees. Read on its own, the Thryv number looks like a market that does not want mobile. Read next to 90 percent, it looks like something else entirely.</p>
 <p>The breadth number was the one that made the room go quiet. Non-customers reported using seventeen distinct categories of business software at a rate of 30 percent or higher. For Keap customers that figure was five categories. For Thryv customers it was three. The people outside our products were not doing less on mobile than our customers. They were doing substantially more, across a far wider surface, and they were paying other vendors for the privilege.</p>
-<p>Then the blockers. When I asked customers why they were not using the mobile app we already had, the single largest reason after desktop preference was that they did not know it existed. Thirty-five percent of Keap respondents and 36 percent of Thryv respondents were unaware of the app. That finding reframed a meaningful share of the rest of the data, because a preference answer from someone who does not know the product exists is not a product judgement. It is a distribution judgement wearing a product judgement's clothes.</p>
+<p>Then the blockers. When I asked customers why they were not using the mobile app we already had, the single largest reason after desktop preference was that they did not know it existed. Thirty-five percent of Keap respondents and 36 percent of Thryv respondents were unaware of the app. That finding reframed a meaningful share of the rest of the data, because a preference answer from someone who does not know the product exists is not a product judgment. It is a distribution judgment wearing a product judgment's clothes.</p>
 <p>The two customer groups also separated in a way that a pooled sample would have hidden completely. Keap customers reported needing mobile business management at 67 percent, said they would benefit from Keap on mobile at 59 percent, and 29 percent of the ones not using the app blamed missing features. Only 7 percent said their type of business does not require mobile apps. Thryv customers reported need at 34 percent, 56 percent said they would not use a mobile version at all, 31 percent said their business does not require mobile apps, and only 4 percent cited missing features. Those are not two readings of one population. They are two populations. A single mobile strategy written to the average of them would have been wrong for both.</p>
 <p>Where the groups converged, they converged tightly, and that convergence is what the roadmap was eventually built on. Customer messaging and communication ranked first for all three groups. Ease of use ranked first for all three groups as an app attribute. Reliable performance ranked third for all three. The disagreement was entirely in the middle of the list: Keap customers wanted range of features second, while Thryv customers and non-customers both wanted integration second. Scheduling and calendar sat second for Keap and Thryv but fourth for non-customers, who put payments and invoicing second.</p>
-<h2>The finding I argued against</h2>
+<figure class="fig">
+<div class="fig-t">Mobile business app usage, by population</div>
+<svg viewBox="0 0 760 258" role="img" aria-label="Mobile business app usage: 90 percent of non-customer owners and 81 percent of their employees, against 63 and 56 percent for Keap customers and 44 percent for Thryv customers.">
+  <line x1="48" y1="180" x2="740" y2="180" stroke="var(--line)" stroke-width="1"/><text class="f-t" x="38" y="184" text-anchor="end">0</text><line x1="48" y1="147.5" x2="740" y2="147.5" stroke="var(--line)" stroke-width="1"/><text class="f-t" x="38" y="151.5" text-anchor="end">25</text><line x1="48" y1="115" x2="740" y2="115" stroke="var(--line)" stroke-width="1"/><text class="f-t" x="38" y="119" text-anchor="end">50</text><line x1="48" y1="82.5" x2="740" y2="82.5" stroke="var(--line)" stroke-width="1"/><text class="f-t" x="38" y="86.5" text-anchor="end">75</text><line x1="48" y1="50" x2="740" y2="50" stroke="var(--line)" stroke-width="1"/><text class="f-t" x="38" y="54" text-anchor="end">100</text><line x1="48" y1="180" x2="740" y2="180" stroke="var(--muted)" stroke-width="1.2"/>
+  <rect x="124" y="63" width="52" height="117.0" fill="var(--accent)" opacity="1"/><text class="f-n" x="150" y="54" text-anchor="middle">90%</text><rect x="184" y="74.7" width="52" height="105.3" fill="var(--accent)" opacity="0.48"/><text class="f-n" x="210" y="65.7" text-anchor="middle">81%</text><text class="f-k" x="180" y="202" text-anchor="middle">ICP non-customers</text><text class="f-s" x="180" y="218" text-anchor="middle">never used either product</text><rect x="344" y="98.1" width="52" height="81.9" fill="var(--accent)" opacity="1"/><text class="f-n" x="370" y="89.1" text-anchor="middle">63%</text><rect x="404" y="107.2" width="52" height="72.8" fill="var(--accent)" opacity="0.48"/><text class="f-n" x="430" y="98.2" text-anchor="middle">56%</text><text class="f-k" x="400" y="202" text-anchor="middle">Keap customers</text><text class="f-s" x="400" y="218" text-anchor="middle">owners and employees</text><rect x="594" y="122.8" width="52" height="57.2" fill="var(--accent)" opacity="1"/><text class="f-n" x="620" y="113.8" text-anchor="middle">44%</text><text class="f-k" x="620" y="202" text-anchor="middle">Thryv customers</text><text class="f-s" x="620" y="218" text-anchor="middle">overall</text><rect x="48" y="238" width="11" height="11" fill="var(--accent)"/><text class="f-s" x="65" y="247">business owners</text><rect x="178" y="238" width="11" height="11" fill="var(--accent)" opacity="0.48"/><text class="f-s" x="195" y="247">employees</text>
+</svg>
+<figcaption class="fig-c">Read on its own, the Thryv figure looks like a market that does not want mobile. Read next to a comparison group recruited from the same ideal customer profile but outside our products entirely, it looks like something else. Seventy-six percent of that group use mobile for their business daily.</figcaption>
+</figure>
+<figure class="fig">
+<div class="fig-t">How much software each population runs on a phone</div>
+<svg viewBox="0 0 760 168" role="img" aria-label="Categories of business software used at a rate of 30 percent or higher: 17 for non-customers, 5 for Keap customers, 3 for Thryv customers.">
+  <text class="f-k" x="198" y="50" text-anchor="end">ICP non-customers</text><rect x="210" y="26" width="500.0" height="36" fill="var(--accent)" opacity="1"/><text class="f-n" x="722.0" y="50">17</text><text class="f-k" x="198" y="96" text-anchor="end">Keap customers</text><rect x="210" y="72" width="147.1" height="36" fill="var(--accent)" opacity="0.55"/><text class="f-n" x="369.1" y="96">5</text><text class="f-k" x="198" y="142" text-anchor="end">Thryv customers</text><rect x="210" y="118" width="88.2" height="36" fill="var(--accent)" opacity="0.35"/><text class="f-n" x="310.2" y="142">3</text>
+  <text class="f-s" x="210" y="160">categories of business software used at a rate of 30 percent or higher</text>
+</svg>
+<figcaption class="fig-c">The people outside our products were not doing less on mobile than our customers. They were doing substantially more, across a far wider surface, and paying other vendors for it.</figcaption>
+</figure>
+<h2 id="mobile-the-finding-i-argued-against">The finding I argued against</h2>
 <p>Forty-four percent of Keap respondents said they wanted a mobile app that replicates the full desktop experience. That number has an obvious reading, and the obvious reading is wrong.</p>
-<p>People asked what they want from software will specify a solution, because solutions are easier to describe than needs. Full parity costs the respondent nothing to say. The same respondents, asked what they actually do on mobile for their business, answered communication, scheduling, social media, and task management, in that order, with payments trailing. The behavioural answers and the aspirational answer are not the same answer, and only one of them is grounded in anything the respondent has actually done.</p>
-<p>I wrote this up as a demand for confidence rather than a demand for scope: people wanted to know that the thing they needed would be there, not that everything would be there. Building to the literal 44 percent would have committed the team to a multi-year parity project whose first shippable increment was years away. Building to the behavioural data meant a focused app around messaging, scheduling, and lead tracking that could ship, be used, and be measured. I said so plainly in the roll-up, and flagged the parity figure as the one number in the deck most likely to be misread.</p>
-<h2>What it changed</h2>
+<p>People asked what they want from software will specify a solution, because solutions are easier to describe than needs. Full parity costs the respondent nothing to say. The same respondents, asked what they actually do on mobile for their business, answered communication, scheduling, social media, and task management, in that order, with payments trailing. The behavioral answers and the aspirational answer are not the same answer, and only one of them is grounded in anything the respondent has actually done.</p>
+<p>I wrote this up as a demand for confidence rather than a demand for scope: people wanted to know that the thing they needed would be there, not that everything would be there. Building to the literal 44 percent would have committed the team to a multi-year parity project whose first shippable increment was years away. Building to the behavioral data meant a focused app around messaging, scheduling, and lead tracking that could ship, be used, and be measured. I said so plainly in the roll-up, and flagged the parity figure as the one number in the deck most likely to be misread.</p>
+<h2 id="mobile-what-it-changed">What it changed</h2>
 <p>The strategic question shifted from whether to invest to where. The ICP data closed the market-fit debate, because it is difficult to argue that small businesses do not use mobile when 90 percent of the comparison group does, daily, across seventeen tool categories.</p>
 <p>Awareness became a workstream rather than a footnote. A third of our own paying customers not knowing a product exists is a distribution problem that no amount of feature work fixes, and it had been invisible because nobody had asked the question in a form that let it surface.</p>
 <p>The team stopped planning one app. Keap's population had demonstrated appetite and specific feature grievances, which makes it the place where mobile investment pays back soonest. Thryv's population, which skewed heavily toward established and larger businesses, mostly did not want it, and the strategy there became integration and reliability for the minority who did rather than a broad push.</p>
 <p>The feature floor came out of the convergence rather than the divergence: messaging first, scheduling second, built to be easy and reliable before being broad. That is defensible to all three groups simultaneously, which very little else in the dataset was.</p>
-<h2>Limitations I put in the deck</h2>
+<figure class="fig">
+<div class="fig-t">Two customer groups, kept separate</div>
+<div class="cmp"><div class="cmp-c">
+  <div class="cmp-k">Keap customers</div>
+  <div class="cmp-s">appetite, with specific grievances</div>
+  <div class="cmp-r"><b>67%</b><span>say they need mobile business management</span></div><div class="cmp-r"><b>59%</b><span>say they would benefit from Keap on mobile</span></div><div class="cmp-r"><b>29%</b><span>of non-users blame missing features</span></div><div class="cmp-r"><b>7%</b><span>say their business does not require mobile</span></div>
+</div><div class="cmp-c">
+  <div class="cmp-k">Thryv customers</div>
+  <div class="cmp-s">largely not interested</div>
+  <div class="cmp-r"><b>34%</b><span>say they need mobile business management</span></div><div class="cmp-r"><b>56%</b><span>would not use a mobile version at all</span></div><div class="cmp-r"><b>4%</b><span>of non-users blame missing features</span></div><div class="cmp-r"><b>31%</b><span>say their business does not require mobile</span></div>
+</div></div>
+<figcaption class="fig-c">These are not two readings of one population. They are two populations. A single mobile strategy written to the average of them would have been wrong for both, and pooling the samples would have hidden the split completely.</figcaption>
+</figure>
+<h2 id="mobile-limitations-i-put-in-the-deck">Limitations I put in the deck</h2>
 <p>A survey measures what people say, not what they do, and I did not pretend otherwise in the write-up. Self-reported app usage is generous, and stated feature preference is a notoriously weak predictor of adoption.</p>
 <p>The Thryv sample skewed 79 percent established and larger businesses against Keap's 51 percent, and larger businesses have staff, desks, and office hours. A meaningful part of the gap between the two customer groups may be composition rather than product, and I could not separate those effects with the data I had.</p>
 <p>The awareness problem cuts into the preference data. When a third of a group does not know the app exists, their answers to "would you use a mobile version" are answers about an imagined product. I reported the preference figures and flagged the contamination rather than quietly dropping those respondents, because dropping them would have overstated confidence in a smaller remaining sample.</p>
 <p>The three groups were recruited to be compared but were not powered to be compared. The sizes fell out of availability rather than from a power calculation, which is fine for the size of the differences I found and would not have been fine for smaller ones.</p>
-<h2>What I would do differently</h2>
+<h2 id="mobile-what-i-would-do-differently">What I would do differently</h2>
 <p>I would ask about awareness before asking about preference, and route the instrument accordingly, so that preference data comes only from people who know what they are being asked about. In this study the awareness question came late, which meant I could identify the contamination but not prevent it.</p>
 <p>I would make respondents trade. "Would you prefer full desktop parity" is free to answer yes to. "Which three of these would you give up to get the app six months sooner" is not, and it produces a ranking that survives contact with a roadmap.</p>
 <p>I would plan the group comparison as the primary analysis from the start, with sample sizes set accordingly and the demographic skew controlled in recruitment rather than discovered in analysis. The comparison carried the study, and it deserved to be designed for rather than noticed afterwards.</p>
-<p>I would pair the survey with behavioural data we already hold. App store analytics, session logs, and feature usage from the existing apps would have let me check stated usage against real usage for at least the customer groups, and the places where the two disagree are usually the most interesting part of a discovery study.</p>
+<p>I would pair the survey with behavioral data we already hold. App store analytics, session logs, and feature usage from the existing apps would have let me check stated usage against real usage for at least the customer groups, and the places where the two disagree are usually the most interesting part of a discovery study.</p>
 <p>And I would run a small qualitative follow-up on one specific finding. Twenty-nine percent of non-using Keap customers said the app was missing features they need. A survey can tell you that sentence is true. It cannot tell you which features, and that is the single most actionable unanswered question the study produced.</p>
       </div>
       <nav class="study-foot">
         <button class="back" data-nav="home">&#8592; All work</button>
+        <a class="dl" href="Mobile-App-Discovery-Case-Study.pdf" download>Download the presentation (PDF)</a>
       </nav>
     </article>
   </div>
@@ -506,17 +746,31 @@
 <script>
 (function () {
   var ids = ["home", "sus", "kano", "mobile"];
+  var titles = {
+    home: "Jang Soo Lim · UX Research",
+    sus: "Building a Usability Measurement System From Zero · Jang Soo Lim",
+    kano: "Nineteen Features, Seven People, One Buildable First Release · Jang Soo Lim",
+    mobile: "Asking the Right Population · Jang Soo Lim"
+  };
 
-  function show(id, push) {
+  /* first is true on the initial render, where we must not steal focus or
+     push a duplicate history entry. */
+  function show(id, push, first) {
     if (ids.indexOf(id) === -1) id = "home";
     ids.forEach(function (k) {
       var el = document.getElementById("view-" + k);
       if (el) el.classList.toggle("on", k === id);
     });
+    document.title = titles[id] || titles.home;
     if (push) {
-      try { history.replaceState(null, "", id === "home" ? "#" : "#" + id); } catch (e) {}
+      try { history.pushState({ v: id }, "", id === "home" ? "./" : "#" + id); } catch (e) {}
     }
     window.scrollTo(0, 0);
+    if (!first) {
+      var view = document.getElementById("view-" + id);
+      var h = view && view.querySelector("h1");
+      if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
+    }
   }
 
   document.addEventListener("click", function (e) {
@@ -526,11 +780,16 @@
     show(t.getAttribute("data-nav"), true);
   });
 
-  window.addEventListener("hashchange", function () {
-    show((location.hash || "#home").slice(1) || "home", false);
+  /* Back and forward move between the home view and a case study rather than
+     leaving the site, which is what replaceState used to do. */
+  window.addEventListener("popstate", function (e) {
+    var id = (e.state && e.state.v) || (location.hash || "#home").slice(1) || "home";
+    show(id, false);
   });
 
-  show((location.hash || "#home").slice(1) || "home", false);
+  var start = (location.hash || "#home").slice(1) || "home";
+  try { history.replaceState({ v: ids.indexOf(start) === -1 ? "home" : start }, ""); } catch (e) {}
+  show(start, false, true);
 })();
 </script>
 </body>
