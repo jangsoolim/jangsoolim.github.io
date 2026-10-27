@@ -25,6 +25,10 @@
     --line: #E2E6E7;
     --bg: #FCFBF9;
     --panel: #FFFFFF;
+    /* Site-wide, unlike --accent, which is scoped per study. The palette teal
+       #028090 is only 4.52:1 on --bg, which clears AA by a hair at 12.5px.
+       Two steps darker gives 6.0:1 and reads as the same color. */
+    --brand: #026B78;
     --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
     --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   }
@@ -41,9 +45,16 @@
          position: sticky; top: 0; z-index: 20; }
   .bar-in { display: flex; align-items: baseline; justify-content: space-between;
             padding: 20px 32px; max-width: 1060px; margin: 0 auto; }
-  .brand { font-family: var(--serif); font-size: 18px; color: var(--ink);
-           letter-spacing: .01em; background: none; border: 0; padding: 0; cursor: pointer; }
-  .bar-role { font-size: 13px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+  .bar-left { display: flex; align-items: baseline; justify-content: flex-start;
+              flex: 0 1 auto; gap: 13px; min-width: 0; }
+  .brand { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--brand);
+           letter-spacing: .01em; background: none; border: 0; padding: 0; cursor: pointer;
+           white-space: nowrap; }
+  /* an empty span has no baseline, so it must opt out of the row's baseline alignment */
+  .bar-sep { flex: 0 0 1px; width: 1px; height: 16px; background: var(--brand);
+             opacity: .35; align-self: center; }
+  .bar-role { font-size: 12.5px; font-weight: 700; color: var(--brand);
+              letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; }
 
   /* ---- hero */
   .hero { padding: 86px 0 10px; }
@@ -343,7 +354,8 @@
     .r-when { padding-top: 0; order: 2; }
     .r-what { order: 1; }
     .r-job { margin-bottom: 30px; }
-    .bar-role { display: none; }
+    /* the full title will not sit beside the name and the download on a phone */
+    .bar-sep, .bar-role { display: none; }
     .prose h2 { font-size: 23px; }
     .credit { grid-template-columns: 1fr; }
     .prose .fig { width: 100%; }
@@ -369,9 +381,12 @@
 <div class="pf">
   <div class="bar">
     <div class="bar-in">
-      <button class="brand" data-nav="home">Jang Soo Lim</button>
+      <span class="bar-left">
+        <button class="brand" data-nav="home">Jang Soo Lim</button>
+        <span class="bar-sep" aria-hidden="true"></span>
+        <span class="bar-role">User Experience (UX) Researcher</span>
+      </span>
       <span class="bar-right">
-        <span class="bar-role">UX Research</span>
         <a class="bar-dl" href="Lim-Jang-Soo-UX-Researcher-Resume.pdf" download>Resume (PDF)</a>
       </span>
     </div>
