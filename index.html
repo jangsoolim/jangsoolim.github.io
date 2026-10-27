@@ -76,6 +76,9 @@
   .cstat { display: flex; flex-direction: column; }
   .cstat-v { font-family: var(--serif); font-size: 25px; color: var(--accent); line-height: 1.1; }
   .cstat-l { font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+  /* A miniature of a figure from inside the study. Decorative here, so it is
+     hidden from assistive tech: the card's own words already say the number. */
+  .card-thumb { display: block; width: 100%; max-width: 330px; height: auto; margin: 0 0 26px; }
   .card-cta { display: inline-block; margin-top: 22px; font-size: 14.5px; font-weight: 600; color: var(--accent); }
   .card-cta .arrow { display: inline-block; margin-left: 7px; transition: transform .16s ease; }
   .card:hover .card-cta .arrow { transform: translateX(4px); }
@@ -209,6 +212,88 @@
   .cmp-r b { font-family: var(--serif); font-size: 20px; color: var(--accent); font-weight: 400; }
   .cmp-r span { font-size: 13.5px; color: var(--body); line-height: 1.45; }
 
+  /* ---- structural figures
+     Sections that describe a method rather than a result get a diagram
+     instead of a chart. Same hairline-grid construction throughout, so a
+     method figure and a data figure read as the same family. */
+  .fig-stack { display: grid; gap: 16px; }
+  .fig-sub { font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
+             color: var(--muted); margin: 6px 0 0; }
+  .fig-note { font-size: 14px; line-height: 1.6; color: var(--body);
+              margin-top: 16px; padding-left: 16px; border-left: 2px solid var(--accent); }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+           background: var(--line); border: 1px solid var(--line);
+           border-radius: 4px; overflow: hidden; }
+  .steps.s3 { grid-template-columns: repeat(3, 1fr); }
+  .step { background: var(--panel); padding: 18px 18px 20px; }
+  .step.on { background: var(--tint); }
+  .step-n { display: block; font-family: var(--serif); font-size: 20px;
+            color: var(--accent); line-height: 1; }
+  .step-k { display: block; font-size: 14px; font-weight: 600; color: var(--ink); margin: 10px 0 6px; }
+  .step-d { display: block; font-size: 13px; line-height: 1.5; color: var(--muted); }
+
+  .tiles { display: grid; gap: 2px; background: var(--line);
+           border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .tile { background: var(--panel); padding: 16px 18px 18px; }
+  .tile-k { display: block; font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .tile-d { display: block; font-size: 13px; line-height: 1.5; color: var(--muted); }
+
+  .layers { display: grid; gap: 2px; background: var(--line);
+            border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .layer { display: grid; grid-template-columns: 190px 1fr; gap: 20px;
+           background: var(--panel); padding: 16px 20px; align-items: baseline; }
+  .layer-k { font-size: 14px; font-weight: 600; color: var(--accent); }
+  .layer-v { font-size: 14px; line-height: 1.55; color: var(--body); }
+
+  .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+           background: var(--line); border: 1px solid var(--line);
+           border-radius: 4px; overflow: hidden; }
+  .col2 { background: var(--panel); padding: 20px 22px 22px; }
+  .col2.on { background: var(--tint); }
+  .col2-k { font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.35; }
+  .col2-s { font-size: 12.5px; color: var(--muted); margin: 3px 0 15px; }
+  .col2 ul { list-style: none; margin: 0; padding: 0; }
+  .col2 li { position: relative; padding-left: 16px; font-size: 13.5px;
+             line-height: 1.5; color: var(--body); margin-bottom: 9px; }
+  .col2 li:last-child { margin-bottom: 0; }
+  .col2 li::before { content: ""; position: absolute; left: 0; top: 7px;
+                     width: 6px; height: 6px; background: var(--accent); }
+  .col2-big b { display: block; font-family: var(--serif); font-size: 46px;
+                color: var(--accent); font-weight: 400; line-height: 1; }
+  .col2-big span { display: block; font-size: 13.5px; line-height: 1.55;
+                   color: var(--body); margin-top: 12px; }
+
+  .stat2 { display: flex; gap: 64px; flex-wrap: wrap; padding: 24px 26px;
+           background: var(--tint); border-radius: 4px; }
+  .stat2 .st { display: flex; flex-direction: column; }
+  .stat2 .st b { font-family: var(--serif); font-size: 46px; color: var(--accent);
+                 font-weight: 400; line-height: 1; }
+  .stat2 .st span { font-size: 13.5px; color: var(--body); margin-top: 9px; }
+
+  /* ---- affordance collisions */
+  .pairs { display: grid; gap: 2px; background: var(--line);
+           border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .pair { background: var(--panel); padding: 16px 20px 18px; display: grid;
+          grid-template-columns: 1fr 76px 1fr; gap: 14px; row-gap: 11px; align-items: center; }
+  .pair-a, .pair-b { font-size: 14px; font-weight: 600; color: var(--ink);
+                     background: var(--tint); padding: 9px 12px; border-radius: 3px; }
+  .pair-x { font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+            color: var(--muted); text-align: center; }
+  .pair-n { grid-column: 1 / -1; font-size: 13px; line-height: 1.5; color: var(--muted); }
+
+  /* ---- rank tables */
+  .rank { width: 100%; border-collapse: collapse; }
+  .rank caption { text-align: left; font-size: 13.5px; font-weight: 600;
+                  color: var(--ink); padding-bottom: 10px; }
+  .rank th, .rank td { text-align: left; font-size: 13.5px; padding: 10px 12px;
+                       border-bottom: 1px solid var(--line); vertical-align: top; }
+  .rank th { font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+             color: var(--muted); font-weight: 600; }
+  .rank td { color: var(--body); line-height: 1.4; }
+  .rank td:first-child { font-family: var(--serif); font-size: 17px;
+                         color: var(--accent); width: 46px; }
+
   /* ---- prose */
   .prose { max-width: 620px; }
   .prose .fig { width: calc(100% + 140px); max-width: 760px; }
@@ -266,6 +351,15 @@
     .vote { grid-template-columns: 1fr 70px 20px; row-gap: 2px; }
     .vote-t { grid-column: 1 / -1; }
     .cmp { grid-template-columns: 1fr; }
+    /* !important because .tiles carries its column count as an inline style */
+    .steps, .steps.s3, .tiles, .cols2 { grid-template-columns: 1fr !important; }
+    .layer { grid-template-columns: 1fr; gap: 6px; }
+    .pair { grid-template-columns: 1fr; gap: 9px; }
+    .pair-x { text-align: left; }
+    .stat2 { gap: 30px; padding: 20px 22px; }
+    .rank th, .rank td { padding: 8px 8px; font-size: 12.5px; }
+    .rank td:first-child { width: 30px; font-size: 15px; }
+    .card-thumb { max-width: 100%; }
     .study-foot { flex-direction: column; align-items: flex-start; gap: 16px; }
   }
 </style>
@@ -301,11 +395,17 @@
         <h2 class="card-title">Building a Usability Measurement System From Zero</h2>
         <p class="card-dek">Establishing SUS benchmarking as a repeatable research practice across a multi-product SMB platform</p>
         <p class="card-teaser">A small team needed to measure usability across seven product areas, and keep measuring it for years. The real design problem was not how to measure usability. It was how to measure it at a throughput one team could actually sustain.</p>
+        <svg class="card-thumb" viewBox="0 0 300 96" aria-hidden="true" focusable="false">
+  <rect x="40" y="70" width="40" height="12" fill="var(--accent)" opacity="0.95"/><rect x="82" y="70" width="40" height="12" fill="var(--accent)" opacity="0.95"/><rect x="124" y="70" width="40" height="12" fill="var(--accent)" opacity="0.95"/><rect x="166" y="70" width="40" height="12" fill="var(--accent)" opacity="0.95"/><rect x="208" y="70" width="40" height="12" fill="var(--accent)" opacity="0.95"/><rect x="250" y="70" width="40" height="12" fill="var(--accent)" opacity="0.95"/><rect x="40" y="56" width="19" height="12" fill="var(--accent)" opacity="0.88"/><rect x="61" y="56" width="40" height="12" fill="var(--accent)" opacity="0.88"/><rect x="103" y="56" width="40" height="12" fill="var(--accent)" opacity="0.88"/><rect x="145" y="56" width="40" height="12" fill="var(--accent)" opacity="0.88"/><rect x="187" y="56" width="40" height="12" fill="var(--accent)" opacity="0.88"/><rect x="229" y="56" width="40" height="12" fill="var(--accent)" opacity="0.88"/><rect x="271" y="56" width="19" height="12" fill="var(--accent)" opacity="0.88"/><rect x="40" y="42" width="40" height="12" fill="var(--accent)" opacity="0.78"/><rect x="82" y="42" width="40" height="12" fill="var(--accent)" opacity="0.78"/><rect x="124" y="42" width="40" height="12" fill="var(--accent)" opacity="0.78"/><rect x="166" y="42" width="40" height="12" fill="var(--accent)" opacity="0.78"/><rect x="208" y="42" width="40" height="12" fill="var(--accent)" opacity="0.78"/><rect x="40" y="28" width="19" height="12" fill="var(--accent)" opacity="0.66"/><rect x="61" y="28" width="40" height="12" fill="var(--accent)" opacity="0.66"/><rect x="103" y="28" width="40" height="12" fill="var(--accent)" opacity="0.66"/><rect x="145" y="28" width="40" height="12" fill="var(--accent)" opacity="0.66"/><rect x="40" y="14" width="40" height="12" fill="var(--accent)" opacity="0.5"/><rect x="82" y="14" width="40" height="12" fill="var(--accent)" opacity="0.5"/>
+  <line x1="22" y1="12" x2="22" y2="84" stroke="var(--accent)" stroke-width="1.4" opacity="0.65"/>
+  <line x1="13" y1="71" x2="22" y2="71" stroke="var(--accent)" stroke-width="1.2" opacity="0.65"/><line x1="13" y1="58" x2="22" y2="58" stroke="var(--accent)" stroke-width="1.2" opacity="0.65"/><line x1="13" y1="45" x2="22" y2="45" stroke="var(--accent)" stroke-width="1.2" opacity="0.65"/><line x1="13" y1="32" x2="22" y2="32" stroke="var(--accent)" stroke-width="1.2" opacity="0.65"/><line x1="13" y1="19" x2="22" y2="19" stroke="var(--accent)" stroke-width="1.2" opacity="0.65"/>
+  <line x1="6" y1="84" x2="294" y2="84" stroke="var(--accent)" stroke-width="2.6"/>
+</svg>
         <div class="card-stats">
           <div class="cstat"><span class="cstat-v">60+</span><span class="cstat-l">studies run</span></div><div class="cstat"><span class="cstat-v">25</span><span class="cstat-l">feature areas</span></div><div class="cstat"><span class="cstat-v">9 of 10</span><span class="cstat-l">redesigns improved</span></div>
         </div>
         <span class="card-cta">Read the case study<span class="arrow">&#8594;</span></span>
-        <span class="card-meta">Thryv &middot; UX Research &middot; 2023 to 2026</span>
+        <span class="card-meta">Thryv &middot; UX Research</span>
       </a>
 
       <a class="card" href="#kano" data-nav="kano" style="--accent:#B85042;--tint:#F7EDEA">
@@ -314,11 +414,16 @@
         <h2 class="card-title">Nineteen Features, Seven People, One Buildable First Release</h2>
         <p class="card-dek">Using a demo, a Kano survey and an interview to turn a scoping argument into an evidence-based roadmap</p>
         <p class="card-teaser">Nineteen candidate features, engineering capacity for a fraction of them, and a decision that was otherwise going to be made by whoever argued hardest in the room.</p>
+        <svg class="card-thumb" viewBox="0 0 300 96" aria-hidden="true" focusable="false">
+  <rect x="6" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="21" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="36" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="51" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="66" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="81" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="96" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="111" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="126" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="141" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="156" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="171" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="186" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="201" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="216" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="231" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="246" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="261" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/><rect x="276" y="8" width="11" height="11" rx="1.5" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.5"/>
+  <path d="M 6,28 L 88,60 M 287,28 L 205,60" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.3"/>
+  <rect x="88" y="64" width="12" height="12" rx="1.5" fill="var(--accent)"/><rect x="103" y="64" width="12" height="12" rx="1.5" fill="var(--accent)"/><rect x="118" y="64" width="12" height="12" rx="1.5" fill="var(--accent)"/><rect x="133" y="64" width="12" height="12" rx="1.5" fill="var(--accent)"/><rect x="148" y="64" width="12" height="12" rx="1.5" fill="var(--accent)"/><rect x="163" y="64" width="12" height="12" rx="1.5" fill="var(--accent)"/><rect x="178" y="64" width="12" height="12" rx="1.5" fill="var(--accent)"/><rect x="193" y="64" width="12" height="12" rx="1.5" fill="var(--accent)"/>
+</svg>
         <div class="card-stats">
           <div class="cstat"><span class="cstat-v">19</span><span class="cstat-l">features classified</span></div><div class="cstat"><span class="cstat-v">2</span><span class="cstat-l">analyses combined</span></div><div class="cstat"><span class="cstat-v">4</span><span class="cstat-l">unresolved ties flagged</span></div>
         </div>
         <span class="card-cta">Read the case study<span class="arrow">&#8594;</span></span>
-        <span class="card-meta">Keap, a Thryv product &middot; UX Research &middot; March 2024</span>
+        <span class="card-meta">Keap, a Thryv product &middot; UX Research</span>
       </a>
 
       <a class="card" href="#mobile" data-nav="mobile" style="--accent:#C08422;--tint:#FBF1DE">
@@ -327,11 +432,17 @@
         <h2 class="card-title">Asking the Right Population</h2>
         <p class="card-dek">A mobile discovery survey across three independently recruited groups, one of which had never touched our products</p>
         <p class="card-teaser">Low mobile usage looked like a verdict on the category. It took a comparison group drawn from outside our products to show that it was a verdict on us.</p>
+        <svg class="card-thumb" viewBox="0 0 300 96" aria-hidden="true" focusable="false">
+  <rect x="6" y="12" width="172" height="72" fill="none" stroke="var(--muted)" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/>
+  <circle cx="68" cy="48" r="34" fill="var(--accent)" fill-opacity="0.12" stroke="var(--accent)" stroke-width="1.4"/>
+  <circle cx="120" cy="48" r="30" fill="var(--accent)" fill-opacity="0.12" stroke="var(--accent)" stroke-width="1.4"/>
+  <circle cx="240" cy="48" r="36" fill="var(--accent)"/>
+</svg>
         <div class="card-stats">
           <div class="cstat"><span class="cstat-v">519</span><span class="cstat-l">respondents</span></div><div class="cstat"><span class="cstat-v">3</span><span class="cstat-l">groups compared</span></div><div class="cstat"><span class="cstat-v">90%</span><span class="cstat-l">of non-customers use mobile</span></div>
         </div>
         <span class="card-cta">Read the case study<span class="arrow">&#8594;</span></span>
-        <span class="card-meta">Thryv and Keap &middot; UX Research &middot; February 2026</span>
+        <span class="card-meta">Thryv and Keap &middot; UX Research</span>
       </a>
 
       <a class="card" href="#value" data-nav="value" style="--accent:#8A3A5A;--tint:#F4EAEE">
@@ -340,11 +451,17 @@
         <h2 class="card-title">A Pricing Question That Was Not About Price</h2>
         <p class="card-dek">An executive-mandated discovery into how Thryv shows proof of value, which found a product delivering value customers had no way to see</p>
         <p class="card-teaser">The product was delivering value. What was missing was any mechanism by which a customer could see it happening. That turns a pricing problem into a visibility problem, and the two have completely different solutions.</p>
+        <svg class="card-thumb" viewBox="0 0 300 96" aria-hidden="true" focusable="false">
+  <polygon points="120,36 176,36 218,56 174,92 130,90 84,60" fill="var(--accent)" fill-opacity="0.2" stroke="var(--accent)" stroke-width="1.2" stroke-opacity="0.45"/>
+  <polygon points="148,5 176,33 120,33" fill="var(--accent)"/>
+  <line x1="6" y1="34" x2="294" y2="34" stroke="var(--accent)" stroke-width="1.8"/>
+  <line x1="6" y1="41" x2="294" y2="41" stroke="var(--accent)" stroke-width="1" opacity="0.3"/>
+</svg>
         <div class="card-stats">
           <div class="cstat"><span class="cstat-v">6</span><span class="cstat-l">findings</span></div><div class="cstat"><span class="cstat-v">2 to 3</span><span class="cstat-l">months to churn</span></div><div class="cstat"><span class="cstat-v">4+3</span><span class="cstat-l">actions and investigations</span></div>
         </div>
         <span class="card-cta">Read the case study<span class="arrow">&#8594;</span></span>
-        <span class="card-meta">Thryv &middot; UX Research &middot; July 2026</span>
+        <span class="card-meta">Thryv &middot; UX Research</span>
       </a>
       </div>
 
@@ -467,6 +584,27 @@
 <h2 id="sus-the-constraint-that-shaped-everything">The constraint that shaped everything</h2>
 <p>Our UX research team was small relative to the number of product areas we were accountable for. Any solution that required a heavyweight study per feature was going to cover a fraction of the platform and then stall.</p>
 <p>So the real design problem was not "how do we measure usability." It was "how do we measure usability in a way that one small team can actually sustain across dozens of features, repeatedly, for years." Throughput was the requirement. Everything below follows from it.</p>
+<figure class="fig">
+<div class="fig-t">The unit of work, run sixty times</div>
+<div class="steps"><div class="step">
+  <span class="step-n">1</span>
+  <span class="step-k">Scope the study</span>
+  <span class="step-d">Pick the feature, and the session format that feature needs</span>
+</div><div class="step">
+  <span class="step-n">2</span>
+  <span class="step-k">Recruit to the question</span>
+  <span class="step-d">Usually ICP-fit people who had never used Thryv</span>
+</div><div class="step on">
+  <span class="step-n">3</span>
+  <span class="step-k">Run the fixed instrumentation</span>
+  <span class="step-d">Completion rubric, ease and confidence ratings, closing SUS. Identical every time</span>
+</div><div class="step">
+  <span class="step-n">4</span>
+  <span class="step-k">Tag and publish</span>
+  <span class="step-d">Primary area and feature, optional second pair, into the shared report</span>
+</div></div>
+<figcaption class="fig-c">The design problem was never how to measure usability. It was how to measure it in a way one small team could sustain across dozens of features for years. Throughput was the requirement, and everything in this sequence follows from it. Step three is the only step that never changed.</figcaption>
+</figure>
 <h2 id="sus-why-sus">Why SUS</h2>
 <p>I chose the System Usability Scale as the backbone of the program. Three properties made it the right fit for the constraint:</p>
 <p><strong>It produces a number that means something outside our own walls.</strong> SUS reports on a 0 to 100 scale, and decades of published studies sit behind that scale: established grade curves, percentile ranks and adjective ratings that say what a given score actually corresponds to. So a score situates a feature against a broad external distribution rather than against an index we invented. That mattered enormously for stakeholder conversations, because it meant I was not asking anyone to trust a bespoke internal measure.</p>
@@ -484,15 +622,56 @@
 </svg>
 <figcaption class="fig-c">SUS reports on a 0 to 100 scale, and the bands are the published adjective ratings that sit behind it. That external frame is the whole reason the instrument was worth using: a score places a feature against a broad distribution of other products rather than against an index we invented. Worth noting that the scale is not a percentage. A score in the 70s is well above the middle of the published distribution, not a C.</figcaption>
 </figure>
+<figure class="fig">
+<div class="fig-t">Why a score never shipped on its own</div>
+<div class="layers"><div class="layer"><span class="layer-k">The SUS score</span><span class="layer-v">Tells you that a feature is underperforming, and roughly by how much, against a distribution outside our own walls</span></div><div class="layer"><span class="layer-k">Task-level data</span><span class="layer-v">Completion scored unaided, assisted or failed, plus an ease rating and a confidence rating on every task. Tells you where</span></div><div class="layer"><span class="layer-k">Session observation</span><span class="layer-v">The moments where someone goes quiet and starts hunting. Tells you why</span></div></div>
+<figcaption class="fig-c">SUS is a global perception measure. On its own it would have given leadership a scoreboard and given product teams nothing to act on. A number always arrived with a diagnosis attached. And the numbers were read at the right resolution: at five to eight participants a seven-point difference between two features is noise, while a thirty-point difference is a finding.</figcaption>
+</figure>
 <h2 id="sus-designing-for-repeatability">Designing for repeatability</h2>
 <p>The thing that made throughput possible was standardizing the <em>measurement</em>, not the session. Studies varied in the ways they needed to: some ran moderated, some unmoderated; sessions ran thirty minutes or sixty depending on the scope of what we were testing; task sets were as long or as short as the feature demanded. Fixing those would have been false rigor, because a six-task linear flow does not need the same container as a sprawling configuration surface.</p>
 <p>What never varied was the instrumentation. The same task-completion rubric, the same post-task ease and confidence ratings, the same closing SUS instrument administered the same way, every time. That is the layer that has to be identical for scores to be comparable, and keeping it fixed meant spinning up a study on a new feature became a matter of writing tasks and choosing a format, not designing a protocol from scratch.</p>
 <p>Letting the format flex is also what let the program reach as far as it did. Unmoderated sessions covered straightforward flows cheaply and at volume; moderated sessions went where I needed to watch someone think. The benchmark came back in the same shape from both.</p>
 <p>Recruiting flexed on the same principle. The question was always who would give the clearest read on this particular product area. In most studies that meant people who fit our ideal customer profile but had never used Thryv. Testing with existing customers measures how well they have adapted to the product; testing with newcomers measures the product. Since the point of a baseline was to capture the experience the interface actually delivers, novel users were usually the right instrument. Where a workflow only made sense in the hands of someone already running their business on the platform, I recruited accordingly and said so, because a score from a different population is not comparable to one from this one.</p>
+<figure class="fig">
+<div class="fig-t">Standardize the measurement, not the session</div>
+<div class="cols2"><div class="col2">
+  <div class="col2-k">What flexed</div>
+  <div class="col2-s">chosen per study, on the shape of the feature</div>
+  <ul><li>Moderated or unmoderated</li><li>Thirty minutes or sixty</li><li>Task sets as long or as short as the feature demanded</li><li>Who we recruited, judged on who would give the clearest read on that product area</li></ul>
+</div><div class="col2 on">
+  <div class="col2-k">What never varied</div>
+  <div class="col2-s">identical in every study, which is what makes scores comparable</div>
+  <ul><li>The task-completion rubric: unaided, assisted, failed</li><li>A single-ease rating on every task</li><li>A confidence rating on every task</li><li>The closing SUS instrument, administered the same way</li></ul>
+</div></div>
+<figcaption class="fig-c">Fixing the format would have been false rigor, because a six-task linear flow does not need the same container as a sprawling configuration surface. Fixing the instrumentation is what let a new study become a matter of writing tasks and choosing a format rather than designing a protocol from scratch, and it is what let the benchmark come back in the same shape from a moderated session and an unmoderated one.</figcaption>
+</figure>
 <h2 id="sus-the-taxonomy">The taxonomy</h2>
 <p>Comparability only pays off if scores can roll up. Early on I was tagging studies loosely, and it became clear that a flat list would not survive. Some features genuinely belong to two parts of the product, and naive tagging either double-counts them in aggregate views or forces an arbitrary choice.</p>
 <p>I built a two-level taxonomy: a primary product area and a feature within it, with an optional secondary pair for features that legitimately span areas. The rule I enforced was that a study counts once regardless of how many tags it carries, so rollups stay accurate while cross-cutting features still surface in both places. Seven product areas, twenty-five feature areas.</p>
 <p>This is the part of the project I would do differently, and I'll come back to it below.</p>
+<figure class="fig">
+<div class="fig-t">The tagging rule behind every rollup</div>
+<svg viewBox="0 0 760 212" role="img" aria-label="One study is tagged with a primary product area and feature pair, always, and an optional second pair when the feature genuinely spans two areas. The study is still counted once in every rollup. Seven product areas, twenty-five feature areas.">
+  <rect x="18" y="62" width="192" height="62" fill="none" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="f-k" x="114" y="90" text-anchor="middle">One study</text>
+  <text class="f-s" x="114" y="108" text-anchor="middle">one tracker row</text>
+  <path d="M 212,93 L 246,93 M 239,88 L 246,93 L 239,98" fill="none" stroke="var(--muted)" stroke-width="1.4"/>
+  <rect x="258" y="26" width="286" height="62" fill="var(--tint)"/>
+  <text class="f-k" x="276" y="50">Primary pair</text>
+  <text class="f-l" x="276" y="70">Product area, then feature</text>
+  <text class="f-s" x="526" y="50" text-anchor="end">always</text>
+  <rect x="258" y="118" width="286" height="62" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text class="f-k" x="276" y="142">Second pair</text>
+  <text class="f-l" x="276" y="162">Only when it spans two areas</text>
+  <text class="f-s" x="526" y="142" text-anchor="end">optional</text>
+  <path d="M 556,103 L 590,103 M 583,98 L 590,103 L 583,108" fill="none" stroke="var(--muted)" stroke-width="1.4"/>
+  <rect x="602" y="62" width="142" height="62" fill="none" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="f-k" x="673" y="90" text-anchor="middle">Counted once</text>
+  <text class="f-s" x="673" y="108" text-anchor="middle">in every rollup</text>
+  <text class="f-s" x="24" y="204">Seven product areas. Twenty-five feature areas.</text>
+</svg>
+<figcaption class="fig-c">Comparability only pays off if scores can roll up, and a flat list does not survive contact with features that genuinely belong to two parts of the product. Naive tagging either double counts them or forces an arbitrary choice. The rule that a study counts once regardless of how many tags it carries is what keeps the totals accurate while letting a cross-cutting feature surface in both places.</figcaption>
+</figure>
 <h2 id="sus-from-spreadsheet-to-dashboard">From spreadsheet to dashboard</h2>
 <p>The tracker started in Excel, because that was the fastest thing that could work. It did the job for the research team and almost nothing for anyone else, because a spreadsheet is a file someone has to remember to open.</p>
 <p>So I rebuilt it as an internal HTML report: a single page covering the full platform, filterable by product area, feature, rating band, study type, and delivery model, with scores rendered against the adjective-rating scale and a target line so a team could see at a glance where they sat relative to where we wanted them. Crucially, it paired each baseline with its later benchmark and showed the delta between them, so improvement was visible as movement rather than as two unconnected numbers.</p>
@@ -540,6 +719,26 @@
 <p>I ran it moderated, across ten workflows, with ICP-fit participants who had never used Thryv. This was a case where watching people hunt mattered more than throughput did, and where first-contact confusion was exactly the signal the successor team needed. Task-level data pointed immediately at the weak spots: composing a new message and creating a label were by a clear margin the hardest tasks, both in completion rate and in participants' own confidence ratings.</p>
 <p>The observed behavior explained the scores. Participants repeatedly reached for search when they wanted to filter their inbox, producing errors, because the two affordances read as interchangeable. The bulk-action control was unintuitive enough that most people needed several attempts to find it, and several asked for the selection checkboxes to simply be visible by default. The distinction between pinning a single message and pinning a whole conversation was invisible to users, who frequently did one when asked to do the other. Channel selection during compose was confused with the channel <em>filter</em>. And labels, a core organizational feature, were hard enough to locate that most participants hunted before finding where to create one.</p>
 <p>None of those findings improved Command Center, which was the point. They became a constraint list for the successor product and for the other areas of the platform building similar inbox and messaging functionality, so the same problems did not get rebuilt. The study's value was entirely in what it prevented.</p>
+<figure class="fig">
+<div class="fig-t">What not to carry forward</div>
+<div class="pairs"><div class="pair">
+  <span class="pair-a">Search</span>
+  <span class="pair-x">read as</span>
+  <span class="pair-b">Filter the inbox</span>
+  <span class="pair-n">Participants reached for search when they wanted to filter, and produced errors, because the two affordances read as interchangeable</span>
+</div><div class="pair">
+  <span class="pair-a">Pin a message</span>
+  <span class="pair-x">read as</span>
+  <span class="pair-b">Pin a conversation</span>
+  <span class="pair-n">The distinction was invisible, so people frequently did one when they had been asked to do the other</span>
+</div><div class="pair">
+  <span class="pair-a">Choose a channel to send on</span>
+  <span class="pair-x">read as</span>
+  <span class="pair-b">Filter by channel</span>
+  <span class="pair-n">The compose control was read as the filter control</span>
+</div></div><div class="fig-note">The two hardest tasks, by both completion rate and participants' own confidence ratings, were composing a new message and creating a label. Bulk actions took most people several attempts to find, and several asked for the selection checkboxes to simply be visible by default.</div>
+<figcaption class="fig-c">The feature was already slated for deprecation, so the research question was not how to fix it. These became a constraint list for the successor product and for the other areas of the platform building similar inbox and messaging functionality. The study's value was entirely in what it prevented.</figcaption>
+</figure>
 <h2 id="sus-what-i-d-do-differently">What I'd do differently</h2>
 <p><strong>Build the taxonomy first.</strong> I designed the category structure after roughly a dozen studies were already done, which meant retrofitting tags onto existing work and reconciling inconsistent naming. The structure I landed on was right; the sequencing cost me real time. On a program like this the data model should precede the data.</p>
 <p><strong>Write down the rule for choosing a format.</strong> I ran studies moderated or unmoderated, long or short, based on judgment about the feature in front of me, and I think the calls were mostly right. But the reasoning lived in my head rather than in a documented rule, which meant the choice was not reproducible by anyone else and I could not test whether format was quietly shifting scores. For a system meant to outlast me, that decision should have been explicit criteria, and I should have checked for a format effect in the data.</p>
@@ -580,11 +779,39 @@
 <p>Pipeline usage differs enormously from business to business. A consultancy with four long deals a quarter and an agency with two hundred short ones use the same screen in almost unrelated ways. A task-based study has to pick specific flows and ask everyone to walk them, and the moment you do that on a highly diverse tool you have decided in advance which use is the real one. You get clean data about the flows you chose and silence about everything else.</p>
 <p>So Part 1 of each session was a structured demo rather than a task set. Jake Ferguson walked each participant through the nineteen features in the new design, which gave every participant the same exposure to the same capability set without forcing them into a single way of working. That exposure was the precondition for the rest of the session, because a Kano question about a feature somebody has not seen is a question about a sentence, not a feature.</p>
 <p>The trade is real and I want to be clear about it. A demo tells you what people think of a capability described and shown to them. It does not tell you whether they can use it. I was buying breadth across nineteen features and across highly varied use, and I was paying for it in depth on any one of them.</p>
+<figure class="fig">
+<div class="fig-t">One session, three parts</div>
+<div class="steps s3"><div class="step">
+  <span class="step-n">1</span>
+  <span class="step-k">Structured demo</span>
+  <span class="step-d">Every participant saw the same nineteen features demonstrated the same way, rather than being walked through flows somebody had chosen for them</span>
+</div><div class="step on">
+  <span class="step-n">2</span>
+  <span class="step-k">Kano survey</span>
+  <span class="step-d">All nineteen features, each asked twice: how would you feel if this were present, and how would you feel if it were absent</span>
+</div><div class="step">
+  <span class="step-n">3</span>
+  <span class="step-k">Interview</span>
+  <span class="step-d">An open conversation, closing with each participant naming the three features they most wanted</span>
+</div></div>
+<figcaption class="fig-c">Pipeline usage differs enormously from business to business, and a task-based study has to pick specific flows, which decides in advance which use is the real one. The demo bought breadth across nineteen features and across highly varied use, and paid for it in depth on any one of them. It was also the precondition for part two, because a Kano question about a feature somebody has not seen is a question about a sentence.</figcaption>
+</figure>
 <h2 id="kano-why-kano-for-the-prioritization">Why Kano for the prioritization</h2>
 <p>Part 2 was a Kano survey covering all nineteen features.</p>
 <p>Most prioritization methods ask people to rank or rate, which produces one ordered list. That list has a known weakness, which is that people rate almost everything as important and the things they rate highest are often the things they would never notice were working. A simple importance survey would have told us nineteen features were all quite important, which is the argument we were already having.</p>
 <p>Kano asks about each feature twice, once functionally and once dysfunctionally. How would you feel if this were present, and how would you feel if it were absent. The pairing is what produces the insight, because the two answers together reveal the shape of a person's relationship with the feature rather than just its weight. Must-be features generate no satisfaction when present and real frustration when absent, which makes them the price of entry. Performance features scale, so more of them or better versions produce proportionally more satisfaction. Attractive features delight when present and are not missed when absent. Indifferent features move the user in neither direction, which makes them the cheapest thing on the list to cut.</p>
 <p>That is a categorical answer rather than an ordinal one, and categorical is what a scoping conversation needs. "Rank these nineteen" does not tell you where the line goes. "These are the price of entry, these scale with investment, these would delight, these are noise" does.</p>
+<figure class="fig">
+<div class="fig-t">What asking twice buys you</div>
+<svg viewBox="0 0 760 340" role="img" aria-label="A two by two grid. The horizontal axis is how much a feature is missed when absent, the vertical axis is satisfaction when present. Attractive features delight when present and are not missed when absent. Performance features scale with investment. Indifferent features move the user in neither direction. Must-be features generate no satisfaction when present and real frustration when absent.">
+  <rect x="130" y="30" width="280" height="130" fill="var(--accent)" opacity="0.09"/><text class="f-k" x="148" y="62">Attractive</text><text class="f-l" x="148" y="84">Delights when present.</text><text class="f-l" x="148" y="102">Not missed when absent.</text><rect x="410" y="30" width="280" height="130" fill="var(--accent)" opacity="0.15"/><text class="f-k" x="428" y="62">Performance</text><text class="f-l" x="428" y="84">More of it, or a better</text><text class="f-l" x="428" y="102">version, produces more</text><text class="f-l" x="428" y="120">satisfaction.</text><rect x="130" y="160" width="280" height="130" fill="var(--accent)" opacity="0.04"/><text class="f-k" x="148" y="192">Indifferent</text><text class="f-l" x="148" y="214">Moves the user in</text><text class="f-l" x="148" y="232">neither direction.</text><text class="f-l" x="148" y="250">The cheapest thing to cut.</text><rect x="410" y="160" width="280" height="130" fill="var(--accent)" opacity="0.22"/><text class="f-k" x="428" y="192">Must-be</text><text class="f-l" x="428" y="214">No satisfaction when present.</text><text class="f-l" x="428" y="232">Real frustration when absent.</text><text class="f-l" x="428" y="250">The price of entry.</text>
+  <path d="M 120,290 L 120,30 M 115,37 L 120,30 L 125,37" fill="none" stroke="var(--muted)" stroke-width="1.2"/>
+  <path d="M 130,300 L 690,300 M 683,295 L 690,300 L 683,305" fill="none" stroke="var(--muted)" stroke-width="1.2"/>
+  <text class="f-s" transform="rotate(-90 104 160)" x="104" y="160" text-anchor="middle">satisfaction when present, low to high</text>
+  <text class="f-s" x="410" y="322" text-anchor="middle">how much it is missed when absent, low to high</text>
+</svg>
+<figcaption class="fig-c">Most prioritization methods ask people to rank or rate, which produces one ordered list, and people rate almost everything as important. A simple importance survey would have told us nineteen features were all quite important, which is the argument we were already having. Asking about presence and absence separately produces a categorical answer rather than an ordinal one, and categorical is what a scoping conversation needs: ranking nineteen does not tell you where the line goes.</figcaption>
+</figure>
 <h2 id="kano-running-both-analyses-instead-of-picking-one">Running both analyses instead of picking one</h2>
 <p>A Kano dataset can be read two ways, and most studies pick one. I ran both, because with seven participants the disagreement between them is itself information.</p>
 <p>The discrete analysis classifies each participant's response separately and takes the mode across participants, so a feature's category is whatever the largest group of individuals said. The continuous analysis averages the underlying satisfaction and functionality ratings first and classifies the average, so it describes the group as a composite rather than as a vote.</p>
@@ -598,6 +825,11 @@
   <rect x="176.0" y="44" width="231.6" height="46" fill="var(--accent)" opacity="1"/><text class="f-n" x="291.8" y="73" text-anchor="middle" fill="#FFFFFF">8</text><rect x="407.6" y="44" width="115.8" height="46" fill="var(--accent)" opacity="0.66"/><text class="f-n" x="465.5" y="73" text-anchor="middle" fill="#FFFFFF">4</text><rect x="523.4" y="44" width="115.8" height="46" fill="var(--accent)" opacity="0.38"/><text class="f-n" x="581.3" y="73" text-anchor="middle" fill="var(--ink)">4</text><rect x="639.2" y="44" width="86.8" height="46" fill="var(--accent)" opacity="0.16"/><text class="f-n" x="682.6" y="73" text-anchor="middle" fill="var(--ink)">3</text><text class="f-k" x="164" y="66" text-anchor="end">Discrete</text><text class="f-s" x="164" y="82" text-anchor="end">mode across participants</text><rect x="176.0" y="112" width="463.2" height="46" fill="var(--accent)" opacity="0.66"/><text class="f-n" x="407.6" y="141" text-anchor="middle" fill="#FFFFFF">16</text><rect x="639.2" y="112" width="86.8" height="46" fill="var(--accent)" opacity="0.38"/><text class="f-n" x="682.6" y="141" text-anchor="middle" fill="var(--ink)">3</text><text class="f-k" x="164" y="134" text-anchor="end">Continuous</text><text class="f-s" x="164" y="150" text-anchor="end">classified on the average</text><rect x="176" y="186" width="11" height="11" fill="var(--accent)" opacity="1"/><text class="f-s" x="193" y="195">Must-be</text><rect x="312" y="186" width="11" height="11" fill="var(--accent)" opacity="0.66"/><text class="f-s" x="329" y="195">Performance</text><rect x="448" y="186" width="11" height="11" fill="var(--accent)" opacity="0.38"/><text class="f-s" x="465" y="195">Attractive</text><rect x="584" y="186" width="11" height="11" fill="var(--accent)" opacity="0.16"/><text class="f-s" x="601" y="195">Indifferent</text>
 </svg>
 <figcaption class="fig-c">Averaging pulls everything toward the middle of the grid, and the middle of the grid is Performance. Taken alone, the continuous reading would have said every feature is roughly equally worth building, which is the uninformative answer the study existed to avoid. The gap between the two readings is why I combined them rather than picking one.</figcaption>
+</figure>
+<figure class="fig">
+<div class="fig-t">How the two readings were combined</div>
+<div class="fig-stack"><div class="fig-sub">Each analysis contributes a weight, on the model's own order of importance</div><div class="tiles" style="grid-template-columns:repeat(4,1fr)"><div class="tile"><span class="tile-k">Must-be</span><span class="tile-d">weight 4</span></div><div class="tile"><span class="tile-k">Performance</span><span class="tile-d">weight 3</span></div><div class="tile"><span class="tile-k">Attractive</span><span class="tile-d">weight 2</span></div><div class="tile"><span class="tile-k">Indifferent</span><span class="tile-d">weight 1</span></div></div><div class="fig-sub">A feature's score is the sum of its two weights</div><div class="layers"><div class="layer"><span class="layer-k">Scored 7</span><span class="layer-v">Must-be by the vote and Performance by the composite. As strong a signal as this dataset can produce. Eight features, which became P0</span></div><div class="layer"><span class="layer-k">Scored 6</span><span class="layer-v">Four features, which became P1 and follow P0</span></div><div class="layer"><span class="layer-k">Scored 5 or below</span><span class="layer-v">The remaining seven, deferred to P2 or taken off the list</span></div></div></div>
+<figcaption class="fig-c">A feature scoring three had been called Indifferent by one reading and Attractive by the other, which is as weak a signal as this dataset can produce. The scores sorted cleanly into tiers, which is the part I did not expect: combining two methods that disagreed produced a sharper result than either of them alone.</figcaption>
 </figure>
 <h2 id="kano-the-ties-which-i-did-not-average-away">The ties, which I did not average away</h2>
 <p>Four features came back with tied modes in the discrete analysis, where two categories drew the same share of participants. Toggling between views and changing the board card layout each split evenly between Performance and Attractive. Seeing the contact record without leaving the deal, and viewing and editing general settings, each split evenly between Must-be and Attractive.</p>
@@ -671,6 +903,11 @@
 <p>The qualitative half carried things the survey had no way to ask. Participants were consistent that the new pipeline was a superior model to the old one, that the features shown looked genuinely useful, and that they wanted them in the current product rather than at some point in the future. On the central question the study was commissioned to answer, they thought the new design would meet their business needs for the most part.</p>
 <p>They also named four gaps, and because these came from people picking at a prototype rather than from a questionnaire, they are the kind of finding the instrument could never have produced. They wanted to know whether it would connect to third-party platforms. Next action dates were missing. There was no clear way to record why a deal was won or lost. And they wanted to monitor which products and services clients were actually buying.</p>
 <p>None of the four were in the nineteen. A prioritization study tells you how to order the list you brought; it does not tell you what is not on it. The interview did.</p>
+<figure class="fig">
+<div class="fig-t">Four gaps the instrument could not have found</div>
+<div class="tiles" style="grid-template-columns:repeat(2,1fr)"><div class="tile"><span class="tile-k">Third-party connections</span><span class="tile-d">Whether the new pipeline would connect to platforms outside Keap</span></div><div class="tile"><span class="tile-k">Next action dates</span><span class="tile-d">Missing from the design entirely</span></div><div class="tile"><span class="tile-k">Won and lost reasons</span><span class="tile-d">No clear way to record why a deal closed the way it did</span></div><div class="tile"><span class="tile-k">What clients actually buy</span><span class="tile-d">Monitoring which products and services clients were purchasing</span></div></div>
+<figcaption class="fig-c">None of these four were among the nineteen. A prioritization study tells you how to order the list you brought into the room. It does not tell you what is missing from it, and that is the thing a questionnaire structurally cannot surface. These came from people picking at a prototype in front of them.</figcaption>
+</figure>
 <h2 id="kano-what-it-changed">What it changed</h2>
 <p>The product team scoped the first release on the P0 tier, to go out behind a feature flag, with P1 and P2 following once P0 was in. A selected group of clients would get the flag turned on so the team could watch real use before a wider release.</p>
 <p>The more useful change was to the conversation. Before the study the team was arguing about features. Afterwards they were arguing about the evidence, which is a more productive argument because it has a resolution procedure. A feature's position could still be challenged, but challenging it meant engaging with what partners and customers had said rather than restating a preference.</p>
@@ -681,6 +918,18 @@
 <p>Kano is a stated-preference method, and here it was applied to a prototype rather than a product. Participants were reacting to a demo, and the gap between what people say they want and what they do when it is in front of them is the oldest problem in the discipline. This tells you what users expect of a pipeline like this one. It does not tell you whether our implementation lands.</p>
 <p>Nineteen features is far more than the handful Kano guidance recommends for a single sitting, because every feature costs two near-duplicate questions. I ran nineteen anyway, deliberately, because scoping an MVP is a question about the whole set and a result about three features would have left the other sixteen to be settled by argument, which was the situation I was brought in to fix. The cost was a long instrument and a real fatigue risk that I could not design out.</p>
 <p>Kano categories also decay. What is Attractive this year becomes Performance as competitors adopt it and Must-be once users stop noticing it was ever a choice. The classification is a snapshot of a market at a moment, and I handed it over labeled that way.</p>
+<figure class="fig">
+<div class="fig-t">The sample, drawn at its real size</div>
+<svg viewBox="0 0 760 178" role="img" aria-label="Seven participants: six Keap partners and one Keap Ultimate customer. One participant is 14.29 percent of the sample.">
+  <circle cx="66" cy="38" r="13" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/><path d="M 46,86 C 46,64 57,56 66,56 C 75,56 86,64 86,86 Z" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/><circle cx="142" cy="38" r="13" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/><path d="M 122,86 C 122,64 133,56 142,56 C 151,56 162,64 162,86 Z" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/><circle cx="218" cy="38" r="13" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/><path d="M 198,86 C 198,64 209,56 218,56 C 227,56 238,64 238,86 Z" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/><circle cx="294" cy="38" r="13" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/><path d="M 274,86 C 274,64 285,56 294,56 C 303,56 314,64 314,86 Z" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/><circle cx="370" cy="38" r="13" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/><path d="M 350,86 C 350,64 361,56 370,56 C 379,56 390,64 390,86 Z" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/><circle cx="446" cy="38" r="13" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/><path d="M 426,86 C 426,64 437,56 446,56 C 455,56 466,64 466,86 Z" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/><circle cx="522" cy="38" r="13" fill="none" stroke="var(--accent)" stroke-width="1.6"/><path d="M 502,86 C 502,64 513,56 522,56 C 531,56 542,64 542,86 Z" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+  <path d="M 40,110 L 40,102 L 466,102 L 466,110" fill="none" stroke="var(--muted)" stroke-width="1.2"/>
+  <text class="f-k" x="253" y="128" text-anchor="middle">6 Keap partners</text>
+  <path d="M 502,110 L 502,102 L 542,102 L 542,110" fill="none" stroke="var(--muted)" stroke-width="1.2"/>
+  <text class="f-k" x="502" y="128">1 Keap Ultimate customer</text>
+  <text class="f-l" x="40" y="164">One participant is 14.29 percent, so a category was often decided by three people.</text>
+</svg>
+<figcaption class="fig-c">I reported the percentages because they are what the method produces, and I said plainly in the room that they should be read as seven people rather than as a rate. Partners are expert proxies, which is exactly why they were recruited, and they are still not the user. Given that migrating Opportunities users was the strategic point of the exercise, their voice specifically was the one the sample was thinnest on.</figcaption>
+</figure>
 <h2 id="kano-what-i-would-do-differently">What I would do differently</h2>
 <p>I would recruit end customers alongside partners, and I would analyze them separately rather than pooling them. One Keap Ultimate customer against six partners cannot support that split, so the design had no way to tell a partner's view from a customer's. Given that migrating Opportunities users was the strategic point of the whole exercise, their voice specifically was the one the sample was thinnest on.</p>
 <p>I would plan the tie-break before fielding rather than meeting it in the data. With a sample this size, tied modes are predictable, not surprising, and a rule agreed in advance, whether that is a larger sample, a follow-up question, or a stated convention for which way a tie resolves, is defensible in a way that a decision made after seeing the result is not.</p>
@@ -721,6 +970,14 @@
 <p>So I recruited three groups rather than one. Keap customers, 230 of them. Thryv customers, 146. And a third group of 143 people drawn from our ideal customer profile who had never used either product, recruited as a comparison population rather than as prospects. The non-customer group was the point of the whole design. It gave me a reading on business mobile app behavior that was entirely uncontaminated by anything we had ever shipped. Whatever those 143 people did with their phones was what the market does, not what our product had trained people to do.</p>
 <p>The two customer groups were kept separate rather than pooled, which turned out to matter more than I expected. Keap and Thryv serve overlapping but genuinely different businesses, and I did not want an average that described neither of them.</p>
 <p>The instrument ran in Qualtrics and moved through four areas: general business mobile app behavior outside our products, what tools and categories of software people were using, whether they perceived a need for mobile business management at all, and what an ideal CRM mobile app would contain. The non-customers answered the behavioral and ideal-state sections; questions about why someone was not using our app only went to people who could meaningfully answer them.</p>
+<figure class="fig">
+<div class="fig-t">Three groups, not one</div>
+<svg viewBox="0 0 760 206" role="img" aria-label="Three independently recruited groups: 230 Keap customers, 146 Thryv customers, and 143 people from the ideal customer profile who had never used either product. 519 respondents in total.">
+  <text class="f-k" x="210" y="40" text-anchor="end">Keap customers</text><text class="f-s" x="210" y="56" text-anchor="end">existing Keap users</text><rect x="220" y="20" width="460.0" height="44" fill="var(--accent)" opacity="0.55"/><text class="f-n" x="692.0" y="49">230</text><text class="f-k" x="210" y="96" text-anchor="end">Thryv customers</text><text class="f-s" x="210" y="112" text-anchor="end">kept separate, not pooled</text><rect x="220" y="76" width="292.0" height="44" fill="var(--accent)" opacity="0.55"/><text class="f-n" x="524.0" y="105">146</text><text class="f-k" x="210" y="152" text-anchor="end">ICP non-customers</text><text class="f-s" x="210" y="168" text-anchor="end">never used either product</text><rect x="220" y="132" width="286.0" height="44" fill="var(--accent)" opacity="1"/><text class="f-n" x="518.0" y="161">143</text>
+  <text class="f-s" x="220" y="196">519 respondents in total, analyzed as three independent groups</text>
+</svg>
+<figcaption class="fig-c">The non-customer group is the point of the whole design. A population that is already not using your app cannot tell you whether the category has value, because every answer they give is downstream of their experience of your product. Whatever those 143 people did with their phones was what the market does, not what our product had trained people to do.</figcaption>
+</figure>
 <h2 id="mobile-what-came-back">What came back</h2>
 <p>The comparison group did exactly what it was recruited to do, which was to make the customer numbers legible.</p>
 <p>Among ICP non-customers, 90 percent of business owners and 81 percent of employees use mobile apps to run their business, and 76 percent of them do it daily. Among Thryv customers, mobile business app usage sat at 44 percent. Among Keap customers, 63 percent of owners and 56 percent of employees. Read on its own, the Thryv number looks like a market that does not want mobile. Read next to 90 percent, it looks like something else entirely.</p>
@@ -744,15 +1001,47 @@
 </svg>
 <figcaption class="fig-c">The people outside our products were not doing less on mobile than our customers. They were doing substantially more, across a far wider surface, and paying other vendors for it.</figcaption>
 </figure>
+<figure class="fig">
+<div class="fig-t">Where the three groups agreed</div>
+<div class="fig-stack"><table class="rank">
+<caption>What the app should do</caption>
+<thead><tr><th>Rank</th><th>Keap customers</th><th>Thryv customers</th><th>ICP non-customers</th></tr></thead>
+<tbody><tr><td>1</td><td>Messaging and communication</td><td>Messaging and communication</td><td>Messaging and communication</td></tr><tr><td>2</td><td>Scheduling and calendar</td><td>Scheduling and calendar</td><td>Payments and invoicing</td></tr></tbody></table><table class="rank">
+<caption>What the app should be</caption>
+<thead><tr><th>Rank</th><th>Keap customers</th><th>Thryv customers</th><th>ICP non-customers</th></tr></thead>
+<tbody><tr><td>1</td><td>Ease of use</td><td>Ease of use</td><td>Ease of use</td></tr><tr><td>2</td><td>Range of features</td><td>Integration</td><td>Integration</td></tr><tr><td>3</td><td>Reliable performance</td><td>Reliable performance</td><td>Reliable performance</td></tr></tbody></table></div>
+<figcaption class="fig-c">The disagreement was entirely in the middle of the list. Scheduling and calendar sat second for both customer groups and fourth for non-customers, who put payments and invoicing second instead. The feature floor came out of the convergence rather than the divergence: messaging first, scheduling second, built to be easy and reliable before being broad. That is defensible to all three groups simultaneously, which very little else in the dataset was.</figcaption>
+</figure>
 <h2 id="mobile-the-finding-i-argued-against">The finding I argued against</h2>
 <p>Forty-four percent of Keap respondents said they wanted a mobile app that replicates the full desktop experience. That number has an obvious reading, and the obvious reading is wrong.</p>
 <p>People asked what they want from software will specify a solution, because solutions are easier to describe than needs. Full parity costs the respondent nothing to say. The same respondents, asked what they actually do on mobile for their business, answered communication, scheduling, social media, and task management, in that order, with payments trailing. The behavioral answers and the aspirational answer are not the same answer, and only one of them is grounded in anything the respondent has actually done.</p>
 <p>I wrote this up as a demand for confidence rather than a demand for scope: people wanted to know that the thing they needed would be there, not that everything would be there. Building to the literal 44 percent would have committed the team to a multi-year parity project whose first shippable increment was years away. Building to the behavioral data meant a focused app around messaging, scheduling, and lead tracking that could ship, be used, and be measured. I said so plainly in the roll-up, and flagged the parity figure as the one number in the deck most likely to be misread.</p>
+<figure class="fig">
+<div class="fig-t">The one number in the deck most likely to be misread</div>
+<div class="cols2">
+  <div class="col2">
+    <div class="col2-k">What they said they wanted</div>
+    <div class="col2-s">stated preference, free to answer yes to</div>
+    <div class="col2-big"><b>44%</b><span>of Keap respondents said they wanted a mobile app that replicates the full desktop experience</span></div>
+  </div>
+  <div class="col2 on">
+    <div class="col2-k">What the same respondents said they do on mobile</div>
+    <div class="col2-s">reported behavior, in the order they ranked it</div>
+    <ul><li>Communication</li><li>Scheduling</li><li>Social media</li><li>Task management</li><li>Payments, trailing the rest</li></ul>
+  </div>
+</div>
+<figcaption class="fig-c">People asked what they want from software will specify a solution, because solutions are easier to describe than needs. The behavioral answers and the aspirational answer are not the same answer, and only one of them is grounded in anything the respondent has actually done. I wrote it up as a demand for confidence rather than a demand for scope: people wanted to know that the thing they needed would be there, not that everything would be there.</figcaption>
+</figure>
 <h2 id="mobile-what-it-changed">What it changed</h2>
 <p>The strategic question shifted from whether to invest to where. The ICP data closed the market-fit debate, because it is difficult to argue that small businesses do not use mobile when 90 percent of the comparison group does, daily, across seventeen tool categories.</p>
 <p>Awareness became a workstream rather than a footnote. A third of our own paying customers not knowing a product exists is a distribution problem that no amount of feature work fixes, and it had been invisible because nobody had asked the question in a form that let it surface.</p>
 <p>The team stopped planning one app. Keap's population had demonstrated appetite and specific feature grievances, which makes it the place where mobile investment pays back soonest. Thryv's population, which skewed heavily toward established and larger businesses, mostly did not want it, and the strategy there became integration and reliability for the minority who did rather than a broad push.</p>
 <p>The feature floor came out of the convergence rather than the divergence: messaging first, scheduling second, built to be easy and reliable before being broad. That is defensible to all three groups simultaneously, which very little else in the dataset was.</p>
+<figure class="fig">
+<div class="fig-t">A third of our own paying customers</div>
+<div class="stat2"><div class="st"><b>35%</b><span>of Keap respondents</span></div><div class="st"><b>36%</b><span>of Thryv respondents</span></div></div><div class="fig-note">did not know the mobile app existed. After desktop preference, this was the single largest reason customers gave for not using the app we already had.</div>
+<figcaption class="fig-c">A preference answer from someone who does not know the product exists is not a product judgment. It is a distribution judgment wearing a product judgment's clothes. That reframed a meaningful share of the rest of the data, and it turned awareness into a workstream rather than a footnote, because no amount of feature work fixes it.</figcaption>
+</figure>
 <figure class="fig">
 <div class="fig-t">Two customer groups, kept separate</div>
 <div class="cmp"><div class="cmp-c">
@@ -815,6 +1104,27 @@
 <p>Customer success managers sit in the one position that sees the whole arc. They are on calls with these customers daily, from the first onboarding conversation through the moment someone decides to leave, across hundreds of accounts rather than one. They watch the expectation gap form in real time and spend their working hours trying to close it.</p>
 <p>So I ran two studies with them. An in-depth interview in July 2026, and a workshop on onboarding insights run in the second quarter of the fiscal year, covering what customers arrive expecting, where value perception forms and breaks, how trust operates in the relationship, and where the product leaves gaps that a person has to fill. The interview went deep on one CSM's full account history. The workshop pulled the pattern across a group and let them rank the friction points against each other, which is how the single largest one surfaced.</p>
 <p>The tradeoff is real and I will come back to it in the limitations. CSMs are a proxy. They are an exceptionally well-placed proxy, and they are still not the customer.</p>
+<figure class="fig">
+<div class="fig-t">Why the evidence came from CSMs</div>
+<div class="steps"><div class="step">
+  <span class="step-n">1</span>
+  <span class="step-k">Review the archive</span>
+  <span class="step-d">Five to ten prior studies touching expectations, adoption or value, none designed for this question</span>
+</div><div class="step">
+  <span class="step-n">2</span>
+  <span class="step-k">In-depth CSM interview</span>
+  <span class="step-d">One customer success manager's full account history, July 2026</span>
+</div><div class="step">
+  <span class="step-n">3</span>
+  <span class="step-k">CSM workshop</span>
+  <span class="step-d">A group pulling the pattern across accounts and ranking the friction points against each other</span>
+</div><div class="step on">
+  <span class="step-n">4</span>
+  <span class="step-k">Synthesis</span>
+  <span class="step-d">Six findings, six activation moments, four actions, three investigations to run next</span>
+</div></div>
+<figcaption class="fig-c">Customers are poor witnesses to their own expectation gaps. Someone who bought a product expecting one thing and received another will report dissatisfaction, not the mechanics of how the mismatch happened, and the customers whose experience mattered most were the hardest to reach. CSMs sit in the one position that sees the whole arc, across hundreds of accounts rather than one. They are an exceptionally well-placed proxy, and they are still not the customer.</figcaption>
+</figure>
 <h2 id="value-what-came-back">What came back</h2>
 <p>Six findings held across both studies.</p>
 <p><strong>Customers expect leads. Marketing Center builds presence.</strong> The most common reason customers buy Marketing Center is to get on Google or generate leads, and most arrive expecting a direct and fast increase in inbound calls and inquiries. What the product actually does is build online presence, which is the foundation that supports lead generation over time rather than a lead pipeline in itself. By months two to three, customers who have not seen leads start questioning the value and cancelling, and they do it even when the product is working exactly as designed. That last clause is the whole problem in one line. A product performing to specification was losing customers, which means the failure was not in the product's performance but in what the customer had been led to expect of it. One CSM put the stakes plainly: "This is not a leads tool. This is not a leads product. If they are not getting the leads they are looking for, they will cancel, even with heavy usage of social."</p>
@@ -823,6 +1133,11 @@
 <p><strong>Tech-savviness predicts how much value a customer sees.</strong> A customer's comfort with technology turned out to be one of the strongest predictors of perceived value in the whole dataset. Non-technical customers, who make up the current majority, struggle past basic setup and rarely return to the deeper features on their own, even when they were visibly impressed during a demo. Tech-savvy customers self-explore, connect features to business outcomes and extract substantially more. The uncomfortable implication is that the ideal customer profile we were actively selling into skewed toward the segment that benefits least from the product's most differentiated capabilities. A CSM summarized the pattern in two questions: "Are they impressed? Yes. Are they using it after the first show? Not all the time."</p>
 <p><strong>Trust is the bridge to value.</strong> Customers engage with the product and come back to it only when they trust both the product and the person supporting it. That trust is built through honest advice, proactively flagging problems before the customer finds them, and following through consistently. It breaks quickly when our own integrations cause a problem on the customer's behalf, when bugs sit unresolved for long stretches, or when a technical issue creates more work than doing the job by hand would have. And when it breaks, customers disengage without warning rather than complaining first, which means the usual escalation signals never fire. "If the technical issue takes too long, you lose their buy-in. They say: this is creating more work. I am done."</p>
 <p><strong>Customers think Marketing Center is Google listings, and that is it.</strong> Most arrive knowing exactly one feature. Social posting, AI review responses, heatmaps, competitor tracking, call analytics and AI call scoring are effectively invisible until a CSM walks someone through them. The reaction when that happens is real and consistent. The problem is that it depends entirely on how much effort an individual CSM puts in, which means value delivery was not built into the product at all. It was built into the staff. "I have never heard of anyone being sold on the full platform. It is still mostly being sold for online presence."</p>
+<figure class="fig">
+<div class="fig-t">Six findings, across two studies</div>
+<div class="tiles" style="grid-template-columns:repeat(2,1fr)"><div class="tile"><span class="tile-k">Customers expect leads</span><span class="tile-d">Marketing Center builds online presence, the foundation that supports lead generation over time rather than a lead pipeline in itself</span></div><div class="tile"><span class="tile-k">Listings and leads are not the same thing</span><span class="tile-d">Ranked the single top friction point in the workshop, above everything else on the table</span></div><div class="tile"><span class="tile-k">There is a self-service gap</span><span class="tile-d">The product performs only when customers feed it, and a large share arrive expecting the work to be done for them</span></div><div class="tile"><span class="tile-k">Tech-savviness predicts perceived value</span><span class="tile-d">One of the strongest predictors in the dataset, and the current majority of customers is non-technical</span></div><div class="tile"><span class="tile-k">Trust is the bridge to value</span><span class="tile-d">Built through honest advice and follow-through, and broken quietly rather than loudly, so escalation signals never fire</span></div><div class="tile"><span class="tile-k">Customers think it is Google listings</span><span class="tile-d">Social posting, AI review responses, heatmaps, competitor tracking and call analytics stay invisible until a CSM walks someone through them</span></div></div>
+<figcaption class="fig-c">The first one is the whole problem in a sentence: a product performing exactly to specification was losing customers, which means the failure was not in the product's performance but in what the customer had been led to expect of it.</figcaption>
+</figure>
 <figure class="fig">
 <div class="fig-t">Where the expectation gap closes into a cancellation</div>
 <svg viewBox="0 0 760 216" role="img" aria-label="A timeline in three stages. The product builds online presence from onboarding onward. The customer is watching for a direct rise in inbound calls and inquiries, which is not visible. At months two to three the customer questions the value and cancels.">
@@ -842,6 +1157,11 @@
 <h2 id="value-the-moments-that-actually-land">The moments that actually land</h2>
 <p>The sixth finding came with something useful attached. CSMs could name, specifically and consistently, which features produce a reaction when a customer is shown them for the first time. Updating business information once and watching it appear across every directory. AI-drafted responses to Google reviews with search optimization built in, which non-technical customers adopt readily because it removes work rather than adding it. The first tracked call, which shows a customer exactly where a lead came from. Page-level heatmap data surfacing issues they would never have found alone. Posting to every channel at once with AI-generated captions. And AI call scoring, which demonstrates that the platform is doing something more intelligent than managing a listing.</p>
 <p>Six moments, named independently by people who had watched them land hundreds of times. They were being discovered by accident, when a particular CSM happened to go deep enough with a particular customer. That is the difference between an activation strategy and good luck.</p>
+<figure class="fig">
+<div class="fig-t">The six moments that reliably land</div>
+<div class="tiles" style="grid-template-columns:repeat(3,1fr)"><div class="tile"><span class="tile-k">One update, everywhere</span><span class="tile-d">Business information changed once, then appearing across every directory</span></div><div class="tile"><span class="tile-k">AI review responses</span><span class="tile-d">Drafted for Google reviews with search optimization built in, and adopted readily because it removes work rather than adding it</span></div><div class="tile"><span class="tile-k">The first tracked call</span><span class="tile-d">Showing a customer exactly where a lead came from</span></div><div class="tile"><span class="tile-k">Page-level heatmaps</span><span class="tile-d">Surfacing issues they would never have found on their own</span></div><div class="tile"><span class="tile-k">Posting to every channel at once</span><span class="tile-d">With AI-generated captions</span></div><div class="tile"><span class="tile-k">AI call scoring</span><span class="tile-d">Evidence that the platform is doing something more intelligent than managing a listing</span></div></div>
+<figcaption class="fig-c">Named independently and consistently by people who had watched them land hundreds of times. They were being discovered by accident, when a particular CSM happened to go deep enough with a particular customer, which is the difference between an activation strategy and good luck. Worth saying plainly: I recommended engineering these into onboarding without having established that a reaction in a demo converts into continued use. That recommendation deserved a measurement plan attached to it.</figcaption>
+</figure>
 <h2 id="value-the-reframe">The reframe</h2>
 <p>The executives had asked how to justify the price. What the research said is that justification was the wrong verb.</p>
 <p>The product was delivering value. Listings were being corrected across directories, reviews were being answered, presence was being built. The delivery was not in doubt. What was missing was any mechanism by which a customer could see it happening. A small business owner two months in had no way to look at Thryv and answer the question "what has this done for me," and in the absence of an answer they supplied their own, which was the one they had arrived with: I was promised leads and I do not have leads.</p>
@@ -865,11 +1185,29 @@
 </svg>
 <figcaption class="fig-c">Delivery was never in doubt. What was missing was any mechanism by which a customer could observe it, and in the absence of an answer they supply their own. You cannot argue someone into perceiving value they cannot see, which is why the lever was never the number on the invoice.</figcaption>
 </figure>
+<figure class="fig">
+<div class="fig-t">What I recommended, and in what order</div>
+<div class="fig-stack"><div class="fig-sub">Four recommended actions</div><div class="layers"><div class="layer"><span class="layer-k">Set the roles out</span><span class="layer-v">Thryv's role and the customer's role, stated explicitly from first contact through sales messaging and onboarding, so shared responsibility is established before the first CSM call rather than discovered at month three</span></div><div class="layer"><span class="layer-k">Engineer the moments</span><span class="layer-v">The six activation moments built into onboarding as structured product milestones, surfaced in-product with context on what just happened and why it matters commercially</span></div><div class="layer"><span class="layer-k">Segment the onboarding</span><span class="layer-v">Separate paths built from tech-savviness captured at signup, because non-technical and tech-savvy customers plainly need different journeys</span></div><div class="layer"><span class="layer-k">Market the whole platform</span><span class="layer-v">Marketing Center sold as the full platform it is, rather than the listings tool customers believe they are buying</span></div></div><div class="fig-sub">Three investigations, in this order on purpose</div><div class="tiles" style="grid-template-columns:repeat(3,1fr)"><div class="tile"><span class="tile-k">Is the value visible at all?</span><span class="tile-d">Whether what Thryv delivers is currently observable to customers, and whether our existing reporting surfaces communicate it</span></div><div class="tile"><span class="tile-k">What can we credibly claim?</span><span class="tile-d">Grounded in data, separating what the product delivers on its own from what is co-created with the customer's effort</span></div><div class="tile"><span class="tile-k">How do we make it tangible?</span><span class="tile-d">Across the whole customer journey, rather than in one product area</span></div></div></div>
+<figcaption class="fig-c">I was deliberate about the middle investigation. There is a version of this work that goes straight to building a dashboard full of encouraging numbers, and it fails the moment a customer checks a claim we cannot support. Defining what we can honestly say had to come before deciding how to say it.</figcaption>
+</figure>
 <h2 id="value-what-it-changed">What it changed</h2>
 <p>The strategic conversation moved off price and onto reporting.</p>
 <p>Leadership came away persuaded that the highest-leverage work was making Thryv's impact on a customer's business legible to that customer: lead counts they can see, a business health score that tells them where they stand, revenue change they can attribute. Not a better argument for the price, but a running answer to what this has done for me, available without a CSM present to interpret it.</p>
 <p>That is a meaningfully different place to spend engineering effort than where the question started. The original framing pointed at pricing and packaging work. The finding pointed at in-product reporting and at onboarding, and leadership accepted the redirection.</p>
 <p>The three investigations became the forward research agenda for the value question rather than remaining a closing slide, and the work was underway when I left Thryv in November. I am describing a change in direction and in what the organization believed the problem was, because that is what I can evidence. I am not going to claim shipped features I did not stay to see.</p>
+<figure class="fig">
+<div class="fig-t">Where the engineering effort ended up pointed</div>
+<div class="cols2"><div class="col2">
+  <div class="col2-k">Where the question pointed when it arrived</div>
+  <div class="col2-s">the default answers sitting inside the framing</div>
+  <ul><li>Argue the price down</li><li>Bundle more in</li><li>Build a better sales pitch</li><li>All three treat it as a communication problem on the sales side</li></ul>
+</div><div class="col2 on">
+  <div class="col2-k">Where leadership redirected it</div>
+  <div class="col2-s">after the research</div>
+  <ul><li>Lead counts the customer can see</li><li>A business health score that tells them where they stand</li><li>Revenue change they can attribute</li><li>A running answer to what this has done for me, available without a CSM present to interpret it</li></ul>
+</div></div>
+<figcaption class="fig-c">That is a meaningfully different place to spend engineering effort than where the question started. The original framing pointed at pricing and packaging work. The finding pointed at in-product reporting and at onboarding, and leadership accepted the redirection. I am describing a change in direction and in what the organization believed the problem was, because that is what I can evidence. The work was underway when I left Thryv in November.</figcaption>
+</figure>
 <h2 id="value-limitations-i-put-in-the-report">Limitations I put in the report</h2>
 <p>Everything here is CSM-reported. I talked to the people who talk to customers, not to customers. CSMs are an unusually good proxy, with breadth across hundreds of accounts that no customer sample would give me at this cost, and they are still filtering through their own memory, their own incentives and their own theories about why accounts churn. The cancellation pattern at months two to three is a pattern CSMs observe, not one I measured.</p>
 <p>The primary sample is small. One in-depth interview and one workshop is enough to establish that a pattern exists and nothing like enough to size it. I could say the expectation gap is real and that practitioners rank it the top friction point. I could not say what share of customers it affects.</p>
